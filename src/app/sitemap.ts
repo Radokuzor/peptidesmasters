@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getAllPeptideSlugs } from "@/data/peptides";
 import { getAllArticleSlugs } from "@/data/articles";
 
+export const dynamic = "force-static";
+
 const BASE_URL = "https://peptidesmasters.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {

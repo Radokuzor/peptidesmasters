@@ -42,13 +42,25 @@ To add an article: append to `src/data/articles.ts` following the `Article` inte
 
 ## Running Locally
 ```bash
-npm run dev     # localhost:3000
-npm run build   # 43 static pages
+npm run dev       # localhost:3000
+npm run build     # Static export → out/ (43 pages)
+npm run preview   # Build + preview via wrangler pages dev
 ```
+
+## Deployment (Cloudflare Pages — auto-deploy via GitHub)
+Static export: `output: "export"` in next.config.ts. Output dir: `out/`.
+No adapter needed — Cloudflare Pages runs `npm run build` and serves `out/`.
+
+Cloudflare Pages dashboard settings (one-time):
+- Build command: `npm run build`
+- Build output directory: `out`
+- Node.js version env var: `NODE_VERSION=18`
+
+Connect GitHub repo → every push to `main` auto-deploys.
 
 ## Launch TODO
 - Replace all `[AFFILIATE_LINK_*]` placeholders with real URLs
 - Set GA4 ID in `src/app/layout.tsx` (search for `G-XXXXXXXXXX`)
 - Add OG image at `/public/og-image.png` (1200×630)
 - Connect quiz email form to Mailchimp/ConvertKit (search for `TODO: Connect`)
-- Deploy to Vercel
+- Connect GitHub repo in Cloudflare Pages dashboard to enable auto-deploy
