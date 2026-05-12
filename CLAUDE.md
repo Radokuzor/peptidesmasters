@@ -42,9 +42,8 @@ To add an article: append to `src/data/articles.ts` following the `Article` inte
 
 ## Running Locally
 ```bash
-npm run dev       # localhost:3000
-npm run build     # Static export → out/ (43 pages)
-npm run preview   # Build + preview via wrangler pages dev
+npm run dev    # localhost:3000
+npm run build  # Static export → out/ (43 pages)
 ```
 
 ## Deployment (Cloudflare Pages — auto-deploy via GitHub)
