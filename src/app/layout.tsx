@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BottomTabBar from "@/components/layout/BottomTabBar";
 import DisclaimerBanner from "@/components/layout/DisclaimerBanner";
+import EmailPopup from "@/components/ui/EmailPopup";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -125,6 +126,7 @@ export default function RootLayout({
         <main style={{ flex: 1 }}>{children}</main>
         <Footer />
         <BottomTabBar />
+        <EmailPopup />
       </body>
     </html>
   );

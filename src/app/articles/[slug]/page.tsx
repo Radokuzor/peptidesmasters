@@ -6,6 +6,7 @@ import articles, { getArticleBySlug, getAllArticleSlugs } from "@/data/articles"
 import { formatDate } from "@/lib/utils";
 import MedicalDisclaimer from "@/components/ui/MedicalDisclaimer";
 import AffiliateLink from "@/components/ui/AffiliateLink";
+import EmailInlineBar from "@/components/ui/EmailInlineBar";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -132,51 +133,54 @@ export default async function ArticlePage({ params }: Props) {
         {/* Article body */}
         <article style={{ marginTop: "2rem" }}>
           {article.content.map((section, i) => (
-            <div key={i} style={{ marginBottom: "2rem" }}>
-              {section.heading && (
-                <h2
-                  style={{
-                    fontFamily: "Syne, sans-serif",
-                    fontWeight: 700,
-                    fontSize: "1.35rem",
-                    color: "#1A1614",
-                    margin: "0 0 0.875rem 0",
-                  }}
-                >
-                  {section.heading}
-                </h2>
-              )}
-              <p style={{ color: "#3A3330", fontSize: "1rem", lineHeight: 1.85, margin: 0 }}>
-                {section.body}
-              </p>
-              {section.sources && section.sources.length > 0 && (
-                <div style={{ marginTop: "0.875rem", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-                  {section.sources.map((source, si) => (
-                    <a
-                      key={si}
-                      href={source.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                        fontSize: "0.813rem",
-                        color: "#3B82A0",
-                        textDecoration: "none",
-                        padding: "0.4rem 0.75rem",
-                        background: "rgba(59,130,160,0.05)",
-                        borderRadius: "6px",
-                        border: "1px solid rgba(59,130,160,0.15)",
-                      }}
-                    >
-                      <ExternalLink size={12} />
-                      <span className="citation">[{si + 1}]</span>
-                      {source.label}
-                    </a>
-                  ))}
-                </div>
-              )}
+            <div key={i}>
+              <div style={{ marginBottom: "2rem" }}>
+                {section.heading && (
+                  <h2
+                    style={{
+                      fontFamily: "Syne, sans-serif",
+                      fontWeight: 700,
+                      fontSize: "1.35rem",
+                      color: "#1A1614",
+                      margin: "0 0 0.875rem 0",
+                    }}
+                  >
+                    {section.heading}
+                  </h2>
+                )}
+                <p style={{ color: "#3A3330", fontSize: "1rem", lineHeight: 1.85, margin: 0 }}>
+                  {section.body}
+                </p>
+                {section.sources && section.sources.length > 0 && (
+                  <div style={{ marginTop: "0.875rem", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+                    {section.sources.map((source, si) => (
+                      <a
+                        key={si}
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "0.5rem",
+                          fontSize: "0.813rem",
+                          color: "#3B82A0",
+                          textDecoration: "none",
+                          padding: "0.4rem 0.75rem",
+                          background: "rgba(59,130,160,0.05)",
+                          borderRadius: "6px",
+                          border: "1px solid rgba(59,130,160,0.15)",
+                        }}
+                      >
+                        <ExternalLink size={12} />
+                        <span className="citation">[{si + 1}]</span>
+                        {source.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+              {i === 2 && <EmailInlineBar />}
             </div>
           ))}
         </article>
