@@ -13,14 +13,14 @@ export default function AffiliateLink({
   return (
     <div
       style={{
-        background: "rgba(245, 166, 35, 0.07)",
-        border: "1px solid rgba(245, 166, 35, 0.2)",
+        background: "rgba(139, 107, 74, 0.07)",
+        border: "1px solid rgba(139, 107, 74, 0.2)",
         borderRadius: "8px",
         padding: "1rem 1.25rem",
       }}
     >
-      <p style={{ color: "#9CA3AF", fontSize: "0.75rem", margin: "0 0 0.5rem 0" }}>
-        <strong style={{ color: "#F5A623" }}>Affiliate link below</strong> — we may earn a
+      <p style={{ color: "#6B6460", fontSize: "0.75rem", margin: "0 0 0.5rem 0" }}>
+        <strong style={{ color: "#8B6B4A" }}>Affiliate link below</strong> — we may earn a
         commission if you purchase. This does not influence our research coverage.
       </p>
       {/* AFFILIATE: swap [AFFILIATE_LINK_PEPTIDE_NAME] with your actual affiliate URL when ready */}
@@ -34,9 +34,9 @@ export default function AffiliateLink({
           gap: "0.5rem",
           padding: "0.5rem 1rem",
           borderRadius: "6px",
-          background: "rgba(245, 166, 35, 0.1)",
-          border: "1px solid rgba(245, 166, 35, 0.35)",
-          color: "#F5A623",
+          background: "rgba(139, 107, 74, 0.1)",
+          border: "1px solid rgba(139, 107, 74, 0.35)",
+          color: "#8B6B4A",
           fontSize: "0.875rem",
           fontWeight: 600,
           textDecoration: "none",

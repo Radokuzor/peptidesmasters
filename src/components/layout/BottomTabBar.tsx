@@ -30,7 +30,7 @@ export default function BottomTabBar() {
               flexDirection: "column",
               alignItems: "center",
               gap: "3px",
-              color: isActive ? "#00D4AA" : "#6B7280",
+              color: isActive ? "#3B82A0" : "#A89E98",
               textDecoration: "none",
               flex: 1,
               padding: "0.5rem 0",

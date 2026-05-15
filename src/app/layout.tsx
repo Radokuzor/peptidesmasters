@@ -112,8 +112,8 @@ export default function RootLayout({
       </head>
       <body
         style={{
-          background: "#0A0A0F",
-          color: "#F0F0F0",
+          background: "#FAF7F2",
+          color: "#1A1614",
           fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif",
           minHeight: "100vh",
           display: "flex",
