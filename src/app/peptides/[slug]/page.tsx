@@ -76,14 +76,6 @@ export default async function PeptidePage({ params }: Props) {
       name: "PeptidesMasters.com",
       url: "https://peptidesmasters.com",
     },
-    breadcrumb: {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://peptidesmasters.com" },
-        { "@type": "ListItem", position: 2, name: "Peptide Library", item: "https://peptidesmasters.com/peptides" },
-        { "@type": "ListItem", position: 3, name: peptide.name, item: `https://peptidesmasters.com/peptides/${slug}` },
-      ],
-    },
     mainEntity: {
       "@type": "FAQPage",
       mainEntity: peptide.faqs.map((faq) => ({
@@ -94,11 +86,25 @@ export default async function PeptidePage({ params }: Props) {
     },
   };
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://peptidesmasters.com" },
+      { "@type": "ListItem", position: 2, name: "Peptide Library", item: "https://peptidesmasters.com/peptides" },
+      { "@type": "ListItem", position: 3, name: peptide.name, item: `https://peptidesmasters.com/peptides/${slug}` },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "2rem 1.5rem" }}>

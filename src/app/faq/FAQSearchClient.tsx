@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Search, ExternalLink } from "lucide-react";
 import type { FAQItem } from "@/data/faqs";
+import { faqQuestionToSlug } from "@/data/faqs";
 
 export default function FAQSearchClient({
   faqs,
@@ -127,7 +128,12 @@ export default function FAQSearchClient({
                       }}
                       itemProp="name"
                     >
-                      {faq.question}
+                      <Link
+                        href={`/faq/${faqQuestionToSlug(faq.question)}`}
+                        style={{ color: "#fff", textDecoration: "none" }}
+                      >
+                        {faq.question}
+                      </Link>
                     </h3>
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                       <p

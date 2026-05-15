@@ -162,3 +162,20 @@ export function getFAQsByCategory(category: string): FAQItem[] {
 export function getAllFAQCategories(): string[] {
   return [...new Set(faqs.map((f) => f.category))];
 }
+
+export function faqQuestionToSlug(question: string): string {
+  return question
+    .toLowerCase()
+    .replace(/['']/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
+export function getFAQBySlug(slug: string): FAQItem | undefined {
+  return faqs.find((f) => faqQuestionToSlug(f.question) === slug);
+}
+
+export function getAllFAQSlugs(): string[] {
+  return faqs.map((f) => faqQuestionToSlug(f.question));
+}

@@ -2,17 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { Search, Menu, X, FlaskConical } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { useState, useRef } from "react";
+import { Search, Menu, X, FlaskConical, ChevronDown } from "lucide-react";
 
 const navLinks = [
-  { href: "/peptides", label: "Peptide Library" },
+  { href: "/peptides", label: "Library" },
+  { href: "/articles", label: "Articles" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/guide", label: "Guide" },
+];
+
+const toolsLinks = [
   { href: "/compare", label: "Compare" },
   { href: "/quiz", label: "Peptide Finder" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/guide", label: "Beginner's Guide" },
-  { href: "/articles", label: "Articles" },
 ];
 
 export default function Header() {
@@ -20,6 +22,10 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [toolsOpen, setToolsOpen] = useState(false);
+  const toolsRef = useRef<HTMLDivElement>(null);
+
+  const isToolsActive = toolsLinks.some((l) => pathname === l.href);
 
   return (
     <>
@@ -84,11 +90,7 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.25rem",
-            }}
+            style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}
             className="hidden-mobile"
           >
             {navLinks.map((link) => (
@@ -112,6 +114,69 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Tools dropdown */}
+            <div ref={toolsRef} style={{ position: "relative" }}>
+              <button
+                onClick={() => setToolsOpen((o) => !o)}
+                onBlur={() => setTimeout(() => setToolsOpen(false), 150)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.25rem",
+                  padding: "0.4rem 0.75rem",
+                  borderRadius: "6px",
+                  fontSize: "0.875rem",
+                  fontWeight: 500,
+                  background: isToolsActive ? "rgba(0, 212, 170, 0.1)" : "transparent",
+                  color: isToolsActive ? "#00D4AA" : "#9CA3AF",
+                  border: "none",
+                  cursor: "pointer",
+                  transition: "all 0.2s",
+                }}
+              >
+                Tools <ChevronDown size={13} />
+              </button>
+              {toolsOpen && (
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "calc(100% + 4px)",
+                    left: 0,
+                    background: "rgba(18,18,26,0.98)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: "8px",
+                    padding: "0.4rem",
+                    minWidth: "160px",
+                    zIndex: 50,
+                    backdropFilter: "blur(12px)",
+                  }}
+                >
+                  {toolsLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setToolsOpen(false)}
+                      style={{
+                        display: "block",
+                        padding: "0.5rem 0.75rem",
+                        borderRadius: "5px",
+                        color: pathname === link.href ? "#00D4AA" : "#9CA3AF",
+                        textDecoration: "none",
+                        fontSize: "0.875rem",
+                        fontWeight: 500,
+                        background:
+                          pathname === link.href
+                            ? "rgba(0,212,170,0.08)"
+                            : "transparent",
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Right side */}
@@ -200,13 +265,10 @@ export default function Header() {
               />
               {searchQuery.length > 1 && (
                 <div
-                  style={{
-                    marginTop: "0.75rem",
-                    fontSize: "0.875rem",
-                    color: "#9CA3AF",
-                  }}
+                  style={{ marginTop: "0.75rem", fontSize: "0.875rem", color: "#9CA3AF" }}
                 >
-                  Press Enter to search · Try &quot;BPC-157&quot;, &quot;fat loss&quot;, &quot;legal status&quot;
+                  Press Enter to search · Try &quot;BPC-157&quot;, &quot;fat loss&quot;,
+                  &quot;legal status&quot;
                 </div>
               )}
             </div>
@@ -223,6 +285,24 @@ export default function Header() {
             }}
           >
             {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                style={{
+                  display: "block",
+                  padding: "0.75rem 0",
+                  borderBottom: "1px solid rgba(255,255,255,0.05)",
+                  color: pathname === link.href ? "#00D4AA" : "#F0F0F0",
+                  textDecoration: "none",
+                  fontSize: "1rem",
+                  fontWeight: 500,
+                }}
+              >
+                {link.label}
+              </Link>
+            ))}
+            {toolsLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
