@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ArrowLeft, RotateCcw, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowLeft, RotateCcw, ShieldCheck, Mail } from "lucide-react";
 import peptides from "@/data/peptides";
 import type { Goal } from "@/data/peptides";
 import PeptideCard from "@/components/ui/PeptideCard";
+import EmailCaptureForm from "@/components/ui/EmailCaptureForm";
 
 type Step = {
   id: string;
@@ -97,6 +98,7 @@ function getRecommendations(answers: Answers) {
 export default function QuizPage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
+  const [showEmailStep, setShowEmailStep] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [email, setEmail] = useState("");
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -114,7 +116,7 @@ export default function QuizPage() {
     if (currentStep < steps.length - 1) {
       setCurrentStep((s) => s + 1);
     } else {
-      setShowResults(true);
+      setShowEmailStep(true);
     }
   }
 
@@ -125,12 +127,86 @@ export default function QuizPage() {
   function restart() {
     setCurrentStep(0);
     setAnswers({});
+    setShowEmailStep(false);
     setShowResults(false);
     setEmail("");
     setEmailSubmitted(false);
   }
 
   const recommendations = showResults ? getRecommendations(answers) : [];
+
+  if (showEmailStep && !showResults) {
+    return (
+      <div style={{ maxWidth: "520px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.75rem",
+            marginBottom: "1rem",
+          }}
+        >
+          <div
+            style={{
+              width: "44px",
+              height: "44px",
+              borderRadius: "10px",
+              background: "rgba(59,130,160,0.1)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexShrink: 0,
+            }}
+          >
+            <Mail size={22} color="#3B82A0" />
+          </div>
+          <h1
+            style={{
+              fontFamily: "Syne, sans-serif",
+              fontSize: "1.5rem",
+              fontWeight: 800,
+              color: "#1A1614",
+              margin: 0,
+              lineHeight: 1.2,
+            }}
+          >
+            Want your results emailed to you?
+          </h1>
+        </div>
+
+        <p style={{ color: "#6B6460", fontSize: "0.95rem", lineHeight: 1.7, margin: "0 0 1.5rem 0" }}>
+          Get your peptide profile plus weekly research updates — new studies, legal news, and protocols — delivered straight to your inbox.
+        </p>
+
+        <EmailCaptureForm
+          buttonText="Email My Results"
+          onSuccess={() => setShowResults(true)}
+        />
+
+        <p style={{ color: "#A89E98", fontSize: "0.75rem", margin: "0.5rem 0 1.25rem 0" }}>
+          No spam. Unsubscribe anytime.
+        </p>
+
+        <button
+          onClick={() => setShowResults(true)}
+          style={{
+            display: "block",
+            width: "100%",
+            background: "none",
+            border: "none",
+            color: "#A89E98",
+            fontSize: "0.875rem",
+            cursor: "pointer",
+            textDecoration: "underline",
+            padding: "0.25rem 0",
+            textAlign: "center",
+          }}
+        >
+          Skip, just show results
+        </button>
+      </div>
+    );
+  }
 
   if (showResults) {
     return (

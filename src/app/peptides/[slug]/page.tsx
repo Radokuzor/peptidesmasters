@@ -16,6 +16,7 @@ import {
 import peptides, { getPeptideBySlug, getAllPeptideSlugs } from "@/data/peptides";
 import MedicalDisclaimer from "@/components/ui/MedicalDisclaimer";
 import AffiliateLink from "@/components/ui/AffiliateLink";
+import PeptideEmailCard from "@/components/ui/PeptideEmailCard";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -518,6 +519,8 @@ export default async function PeptidePage({ params }: Props) {
                 </div>
               </Section>
             )}
+
+            <PeptideEmailCard peptideName={peptide.name} />
           </div>
 
           {/* Sidebar — Quick Stats */}
