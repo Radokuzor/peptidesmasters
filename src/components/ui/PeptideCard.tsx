@@ -9,19 +9,19 @@ interface PeptideCardProps {
 
 const researchColors: Record<string, { bg: string; text: string; border: string }> = {
   "Well-Studied": {
-    bg: "rgba(0, 212, 170, 0.1)",
-    text: "#00D4AA",
-    border: "rgba(0, 212, 170, 0.25)",
+    bg: "rgba(31, 107, 80, 0.08)",
+    text: "#1F6B50",
+    border: "rgba(31, 107, 80, 0.2)",
   },
   Emerging: {
-    bg: "rgba(245, 166, 35, 0.1)",
-    text: "#F5A623",
-    border: "rgba(245, 166, 35, 0.25)",
+    bg: "rgba(122, 82, 32, 0.08)",
+    text: "#7A5220",
+    border: "rgba(122, 82, 32, 0.2)",
   },
   Experimental: {
-    bg: "rgba(239, 68, 68, 0.1)",
-    text: "#F87171",
-    border: "rgba(239, 68, 68, 0.25)",
+    bg: "rgba(139, 58, 58, 0.08)",
+    text: "#8B3A3A",
+    border: "rgba(139, 58, 58, 0.2)",
   },
 };
 
@@ -37,7 +37,7 @@ export default function PeptideCard({ peptide, compact = false }: PeptideCardPro
         className="glass-card"
         style={{
           padding: compact ? "1rem" : "1.25rem",
-          transition: "all 0.25s",
+          transition: "box-shadow 0.2s",
           cursor: "pointer",
           height: "100%",
           display: "flex",
@@ -60,7 +60,7 @@ export default function PeptideCard({ peptide, compact = false }: PeptideCardPro
                 fontFamily: "Syne, sans-serif",
                 fontWeight: 700,
                 fontSize: compact ? "1rem" : "1.1rem",
-                color: "#fff",
+                color: "#1A1614",
                 margin: 0,
                 marginBottom: "0.25rem",
               }}
@@ -68,7 +68,7 @@ export default function PeptideCard({ peptide, compact = false }: PeptideCardPro
               {peptide.name}
             </h3>
             {!compact && peptide.alsoKnownAs.length > 0 && (
-              <p style={{ color: "#6B7280", fontSize: "0.75rem", margin: 0 }}>
+              <p style={{ color: "#A89E98", fontSize: "0.75rem", margin: 0 }}>
                 {peptide.alsoKnownAs[0]}
               </p>
             )}
@@ -95,7 +95,7 @@ export default function PeptideCard({ peptide, compact = false }: PeptideCardPro
         {/* Tagline */}
         <p
           style={{
-            color: "#9CA3AF",
+            color: "#6B6460",
             fontSize: "0.813rem",
             lineHeight: 1.6,
             margin: "0 0 0.75rem 0",
@@ -126,9 +126,9 @@ export default function PeptideCard({ peptide, compact = false }: PeptideCardPro
                   padding: "2px 7px",
                   borderRadius: "4px",
                   fontSize: "0.7rem",
-                  background: "rgba(255,255,255,0.06)",
-                  color: "#9CA3AF",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "rgba(0,0,0,0.04)",
+                  color: "#6B6460",
+                  border: "1px solid #E8E2D8",
                 }}
               >
                 {use}
@@ -139,9 +139,9 @@ export default function PeptideCard({ peptide, compact = false }: PeptideCardPro
                 padding: "2px 7px",
                 borderRadius: "4px",
                 fontSize: "0.7rem",
-                background: "rgba(255,255,255,0.06)",
-                color: "#9CA3AF",
-                border: "1px solid rgba(255,255,255,0.08)",
+                background: "rgba(0,0,0,0.04)",
+                color: "#6B6460",
+                border: "1px solid #E8E2D8",
               }}
             >
               <Beaker size={10} style={{ display: "inline", marginRight: "3px" }} />
@@ -149,7 +149,7 @@ export default function PeptideCard({ peptide, compact = false }: PeptideCardPro
             </span>
           </div>
 
-          <ArrowRight size={14} color="#00D4AA" />
+          <ArrowRight size={14} color="#3B82A0" />
         </div>
       </div>
     </Link>

@@ -44,9 +44,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const researchColors: Record<string, { text: string; bg: string; border: string }> = {
-  "Well-Studied": { text: "#00D4AA", bg: "rgba(0,212,170,0.1)", border: "rgba(0,212,170,0.25)" },
-  Emerging: { text: "#F5A623", bg: "rgba(245,166,35,0.1)", border: "rgba(245,166,35,0.25)" },
-  Experimental: { text: "#F87171", bg: "rgba(239,68,68,0.1)", border: "rgba(239,68,68,0.25)" },
+  "Well-Studied": { text: "#1F6B50", bg: "rgba(31,107,80,0.08)", border: "rgba(31,107,80,0.2)" },
+  Emerging: { text: "#7A5220", bg: "rgba(122,82,32,0.08)", border: "rgba(122,82,32,0.2)" },
+  Experimental: { text: "#8B3A3A", bg: "rgba(139,58,58,0.08)", border: "rgba(139,58,58,0.2)" },
 };
 
 export default async function PeptidePage({ params }: Props) {
@@ -110,12 +110,12 @@ export default async function PeptidePage({ params }: Props) {
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "2rem 1.5rem" }}>
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" style={{ marginBottom: "1.5rem" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#6B7280", flexWrap: "wrap" }}>
-            <Link href="/" style={{ color: "#6B7280", textDecoration: "none" }}>Home</Link>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#A89E98", flexWrap: "wrap" }}>
+            <Link href="/" style={{ color: "#A89E98", textDecoration: "none" }}>Home</Link>
             <ChevronRight size={12} />
-            <Link href="/peptides" style={{ color: "#6B7280", textDecoration: "none" }}>Peptide Library</Link>
+            <Link href="/peptides" style={{ color: "#A89E98", textDecoration: "none" }}>Peptide Library</Link>
             <ChevronRight size={12} />
-            <span style={{ color: "#F0F0F0" }}>{peptide.name}</span>
+            <span style={{ color: "#6B6460" }}>{peptide.name}</span>
           </div>
         </nav>
 
@@ -152,9 +152,9 @@ export default async function PeptidePage({ params }: Props) {
                       padding: "4px 10px",
                       borderRadius: "999px",
                       fontSize: "0.75rem",
-                      background: "rgba(255,255,255,0.06)",
-                      color: "#9CA3AF",
-                      border: "1px solid rgba(255,255,255,0.08)",
+                      background: "rgba(0,0,0,0.04)",
+                      color: "#6B6460",
+                      border: "1px solid #E8E2D8",
                     }}
                   >
                     {use}
@@ -167,7 +167,7 @@ export default async function PeptidePage({ params }: Props) {
                   fontFamily: "Syne, sans-serif",
                   fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
                   fontWeight: 800,
-                  color: "#fff",
+                  color: "#1A1614",
                   lineHeight: 1.15,
                   margin: "0 0 0.75rem 0",
                 }}
@@ -175,11 +175,11 @@ export default async function PeptidePage({ params }: Props) {
                 {peptide.name}: What It Is, What the Research Says, and What You Need to Know
               </h1>
 
-              <p style={{ color: "#9CA3AF", fontSize: "1.05rem", lineHeight: 1.7, margin: "0 0 0.75rem 0" }}>
+              <p style={{ color: "#6B6460", fontSize: "1.05rem", lineHeight: 1.7, margin: "0 0 0.75rem 0" }}>
                 {peptide.tagline}
               </p>
 
-              <p style={{ color: "#4B5563", fontSize: "0.813rem", margin: 0 }}>
+              <p style={{ color: "#A89E98", fontSize: "0.813rem", margin: 0 }}>
                 Last updated: {new Date(peptide.lastUpdated).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
               </p>
             </div>
@@ -188,12 +188,13 @@ export default async function PeptidePage({ params }: Props) {
             <div
               className="quick-stats-mobile"
               style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                background: "#FFFFFF",
+                border: "1px solid #E8E2D8",
                 borderRadius: "10px",
                 padding: "1.25rem",
                 marginBottom: "2rem",
                 display: "none",
+                boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
               }}
             >
               <QuickStats peptide={peptide} />
@@ -205,19 +206,19 @@ export default async function PeptidePage({ params }: Props) {
             </div>
 
             {/* What Is It */}
-            <Section title={`What Is ${peptide.name}?`} icon={<FlaskConical size={18} color="#00D4AA" />}>
+            <Section title={`What Is ${peptide.name}?`} icon={<FlaskConical size={18} color="#3B82A0" />}>
               {peptide.whatItIs.map((para, i) => (
-                <p key={i} style={{ color: "#D1D5DB", fontSize: "1rem", lineHeight: 1.8, marginBottom: "1rem" }}>
+                <p key={i} style={{ color: "#3A3330", fontSize: "1rem", lineHeight: 1.8, marginBottom: "1rem" }}>
                   {para}
                 </p>
               ))}
             </Section>
 
             {/* What Research Says */}
-            <Section title="What Does the Research Say?" icon={<TrendingUp size={18} color="#00D4AA" />}>
+            <Section title="What Does the Research Say?" icon={<TrendingUp size={18} color="#3B82A0" />}>
               <ul style={{ paddingLeft: "1.25rem", margin: 0 }}>
                 {peptide.whatResearchSays.map((point, i) => (
-                  <li key={i} style={{ color: "#D1D5DB", fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem" }}>
+                  <li key={i} style={{ color: "#3A3330", fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.5rem" }}>
                     {point}
                   </li>
                 ))}
@@ -226,17 +227,17 @@ export default async function PeptidePage({ params }: Props) {
                 style={{
                   marginTop: "1.25rem",
                   padding: "0.875rem 1rem",
-                  background: "rgba(245,166,35,0.07)",
-                  border: "1px solid rgba(245,166,35,0.2)",
+                  background: "rgba(139,107,74,0.07)",
+                  border: "1px solid rgba(139,107,74,0.2)",
                   borderRadius: "8px",
                   display: "flex",
                   gap: "0.75rem",
                   alignItems: "flex-start",
                 }}
               >
-                <AlertTriangle size={16} color="#F5A623" style={{ flexShrink: 0, marginTop: "2px" }} />
-                <p style={{ color: "#9CA3AF", fontSize: "0.813rem", lineHeight: 1.6, margin: 0 }}>
-                  <strong style={{ color: "#F5A623" }}>Research context:</strong> Animal studies showing
+                <AlertTriangle size={16} color="#8B6B4A" style={{ flexShrink: 0, marginTop: "2px" }} />
+                <p style={{ color: "#6B6460", fontSize: "0.813rem", lineHeight: 1.6, margin: 0 }}>
+                  <strong style={{ color: "#8B6B4A" }}>Research context:</strong> Animal studies showing
                   positive effects do not guarantee the same results in humans. Human evidence strength
                   varies significantly by peptide — see the Quick Stats sidebar for details.
                 </p>
@@ -244,13 +245,13 @@ export default async function PeptidePage({ params }: Props) {
             </Section>
 
             {/* Common Use Cases */}
-            <Section title="Common Use Cases in Research" icon={<FlaskConical size={18} color="#00D4AA" />}>
-              <p style={{ color: "#9CA3AF", fontSize: "0.875rem", marginBottom: "0.75rem" }}>
+            <Section title="Common Use Cases in Research" icon={<FlaskConical size={18} color="#3B82A0" />}>
+              <p style={{ color: "#6B6460", fontSize: "0.875rem", marginBottom: "0.75rem" }}>
                 <em>These reflect how researchers and research communities discuss this compound — not therapeutic recommendations.</em>
               </p>
               <ul style={{ paddingLeft: "1.25rem", margin: 0 }}>
                 {peptide.commonUseCases.map((use, i) => (
-                  <li key={i} style={{ color: "#D1D5DB", fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.4rem" }}>
+                  <li key={i} style={{ color: "#3A3330", fontSize: "1rem", lineHeight: 1.8, marginBottom: "0.4rem" }}>
                     {use}
                   </li>
                 ))}
@@ -258,14 +259,14 @@ export default async function PeptidePage({ params }: Props) {
             </Section>
 
             {/* Mechanism of Action */}
-            <Section title="How It Works (Mechanism of Action)" icon={<FlaskConical size={18} color="#00D4AA" />}>
-              <p style={{ color: "#D1D5DB", fontSize: "1rem", lineHeight: 1.8 }}>
+            <Section title="How It Works (Mechanism of Action)" icon={<FlaskConical size={18} color="#3B82A0" />}>
+              <p style={{ color: "#3A3330", fontSize: "1rem", lineHeight: 1.8 }}>
                 {peptide.mechanismOfAction}
               </p>
             </Section>
 
             {/* Benefits and Risks side by side */}
-            <Section title="Reported Benefits &amp; Risks" icon={<Scale size={18} color="#00D4AA" />}>
+            <Section title="Reported Benefits &amp; Risks" icon={<Scale size={18} color="#3B82A0" />}>
               <div
                 style={{
                   display: "grid",
@@ -275,37 +276,37 @@ export default async function PeptidePage({ params }: Props) {
               >
                 <div
                   style={{
-                    background: "rgba(0,212,170,0.05)",
-                    border: "1px solid rgba(0,212,170,0.15)",
+                    background: "rgba(59,130,160,0.05)",
+                    border: "1px solid rgba(59,130,160,0.15)",
                     borderRadius: "8px",
                     padding: "1rem",
                   }}
                 >
-                  <p style={{ color: "#00D4AA", fontWeight: 600, fontSize: "0.875rem", marginBottom: "0.75rem" }}>
+                  <p style={{ color: "#3B82A0", fontWeight: 600, fontSize: "0.875rem", marginBottom: "0.75rem" }}>
                     Reported Benefits
                   </p>
                   {peptide.reportedBenefits.map((b, i) => (
                     <div key={i} style={{ display: "flex", gap: "0.5rem", alignItems: "flex-start", marginBottom: "0.4rem" }}>
-                      <CheckCircle2 size={14} color="#00D4AA" style={{ flexShrink: 0, marginTop: "3px" }} />
-                      <span style={{ color: "#9CA3AF", fontSize: "0.875rem" }}>{b}</span>
+                      <CheckCircle2 size={14} color="#3B82A0" style={{ flexShrink: 0, marginTop: "3px" }} />
+                      <span style={{ color: "#6B6460", fontSize: "0.875rem" }}>{b}</span>
                     </div>
                   ))}
                 </div>
                 <div
                   style={{
-                    background: "rgba(239,68,68,0.05)",
-                    border: "1px solid rgba(239,68,68,0.15)",
+                    background: "rgba(139,58,58,0.05)",
+                    border: "1px solid rgba(139,58,58,0.15)",
                     borderRadius: "8px",
                     padding: "1rem",
                   }}
                 >
-                  <p style={{ color: "#F87171", fontWeight: 600, fontSize: "0.875rem", marginBottom: "0.75rem" }}>
+                  <p style={{ color: "#8B3A3A", fontWeight: 600, fontSize: "0.875rem", marginBottom: "0.75rem" }}>
                     Reported Risks
                   </p>
                   {peptide.reportedRisks.map((r, i) => (
                     <div key={i} style={{ display: "flex", gap: "0.5rem", alignItems: "flex-start", marginBottom: "0.4rem" }}>
                       <XCircle size={14} color="#F87171" style={{ flexShrink: 0, marginTop: "3px" }} />
-                      <span style={{ color: "#9CA3AF", fontSize: "0.875rem" }}>{r}</span>
+                      <span style={{ color: "#6B6460", fontSize: "0.875rem" }}>{r}</span>
                     </div>
                   ))}
                 </div>
@@ -313,14 +314,14 @@ export default async function PeptidePage({ params }: Props) {
             </Section>
 
             {/* FAQ Section */}
-            <Section title="What People Ask" icon={<FlaskConical size={18} color="#00D4AA" />}>
+            <Section title="What People Ask" icon={<FlaskConical size={18} color="#3B82A0" />}>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {peptide.faqs.map((faq, i) => (
                   <div
                     key={i}
                     style={{
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.08)",
+                      background: "#FAFAF7",
+                      border: "1px solid #E8E2D8",
                       borderRadius: "8px",
                       padding: "1.25rem",
                     }}
@@ -330,13 +331,13 @@ export default async function PeptidePage({ params }: Props) {
                         fontFamily: "Syne, sans-serif",
                         fontWeight: 700,
                         fontSize: "1rem",
-                        color: "#fff",
+                        color: "#1A1614",
                         margin: "0 0 0.5rem 0",
                       }}
                     >
                       {faq.question}
                     </h3>
-                    <p style={{ color: "#9CA3AF", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>
+                    <p style={{ color: "#6B6460", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>
                       {faq.answer}
                     </p>
                   </div>
@@ -345,22 +346,22 @@ export default async function PeptidePage({ params }: Props) {
             </Section>
 
             {/* Legal Status */}
-            <Section title="Legal &amp; Regulatory Status" icon={<Scale size={18} color="#F5A623" />}>
+            <Section title="Legal &amp; Regulatory Status" icon={<Scale size={18} color="#8B6B4A" />}>
               <div
                 style={{
                   background: "rgba(245,166,35,0.06)",
-                  border: "1px solid rgba(245,166,35,0.2)",
+                  border: "1px solid rgba(139,107,74,0.2)",
                   borderRadius: "8px",
                   padding: "1.25rem",
                 }}
               >
                 <div style={{ marginBottom: "0.75rem" }}>
-                  <span style={{ color: "#F5A623", fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                  <span style={{ color: "#8B6B4A", fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>
                     FDA Status
                   </span>
-                  <p style={{ color: "#F0F0F0", fontWeight: 600, margin: "0.25rem 0 0 0" }}>{peptide.fdaStatus}</p>
+                  <p style={{ color: "#1A1614", fontWeight: 600, margin: "0.25rem 0 0 0" }}>{peptide.fdaStatus}</p>
                 </div>
-                <p style={{ color: "#9CA3AF", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>
+                <p style={{ color: "#6B6460", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>
                   {peptide.legalStatus}
                 </p>
               </div>
@@ -368,7 +369,7 @@ export default async function PeptidePage({ params }: Props) {
 
             {/* Cited Studies */}
             {peptide.studies.length > 0 && (
-              <Section title="Cited Research" icon={<ExternalLink size={18} color="#00D4AA" />}>
+              <Section title="Cited Research" icon={<ExternalLink size={18} color="#3B82A0" />}>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                   {peptide.studies.map((study, i) => (
                     <a
@@ -380,15 +381,15 @@ export default async function PeptidePage({ params }: Props) {
                         display: "flex",
                         gap: "0.75rem",
                         padding: "0.875rem 1rem",
-                        background: "rgba(255,255,255,0.03)",
-                        border: "1px solid rgba(255,255,255,0.07)",
+                        background: "#FAFAF7",
+                        border: "1px solid #E8E2D8",
                         borderRadius: "8px",
                         textDecoration: "none",
                       }}
                     >
                       <span
                         style={{
-                          color: "#00D4AA",
+                          color: "#3B82A0",
                           fontWeight: 700,
                           fontSize: "0.875rem",
                           flexShrink: 0,
@@ -397,10 +398,10 @@ export default async function PeptidePage({ params }: Props) {
                         [{i + 1}]
                       </span>
                       <div>
-                        <p style={{ color: "#F0F0F0", fontSize: "0.875rem", margin: "0 0 0.25rem 0", lineHeight: 1.5 }}>
+                        <p style={{ color: "#1A1614", fontSize: "0.875rem", margin: "0 0 0.25rem 0", lineHeight: 1.5 }}>
                           {study.title}
                         </p>
-                        <p style={{ color: "#6B7280", fontSize: "0.8rem", margin: 0 }}>
+                        <p style={{ color: "#A89E98", fontSize: "0.8rem", margin: 0 }}>
                           {study.source} · {study.year} <ExternalLink size={10} style={{ verticalAlign: "middle" }} />
                         </p>
                       </div>
@@ -412,7 +413,7 @@ export default async function PeptidePage({ params }: Props) {
 
             {/* Commonly Stacked With */}
             {peptide.commonlyStackedWith.length > 0 && (
-              <Section title="Commonly Stacked With" icon={<Syringe size={18} color="#00D4AA" />}>
+              <Section title="Commonly Stacked With" icon={<Syringe size={18} color="#3B82A0" />}>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
                   {peptide.commonlyStackedWith.map((name) => {
                     const related = peptides.find(
@@ -425,9 +426,9 @@ export default async function PeptidePage({ params }: Props) {
                         style={{
                           padding: "0.5rem 1rem",
                           borderRadius: "8px",
-                          background: "rgba(0,212,170,0.08)",
-                          border: "1px solid rgba(0,212,170,0.2)",
-                          color: "#00D4AA",
+                          background: "rgba(59,130,160,0.08)",
+                          border: "1px solid rgba(59,130,160,0.2)",
+                          color: "#3B82A0",
                           textDecoration: "none",
                           fontSize: "0.875rem",
                           fontWeight: 600,
@@ -445,8 +446,8 @@ export default async function PeptidePage({ params }: Props) {
                           padding: "0.5rem 1rem",
                           borderRadius: "8px",
                           background: "rgba(255,255,255,0.05)",
-                          border: "1px solid rgba(255,255,255,0.08)",
-                          color: "#9CA3AF",
+                          border: "1px solid #E8E2D8",
+                          color: "#6B6460",
                           fontSize: "0.875rem",
                         }}
                       >
@@ -465,7 +466,7 @@ export default async function PeptidePage({ params }: Props) {
                       alignItems: "center",
                       gap: "0.4rem",
                       marginTop: "0.75rem",
-                      color: "#00D4AA",
+                      color: "#3B82A0",
                       fontSize: "0.875rem",
                       textDecoration: "none",
                       fontWeight: 500,
@@ -478,7 +479,7 @@ export default async function PeptidePage({ params }: Props) {
             )}
 
             {/* Affiliate Section */}
-            <Section title="Research Suppliers" icon={<ExternalLink size={18} color="#F5A623" />}>
+            <Section title="Research Suppliers" icon={<ExternalLink size={18} color="#8B6B4A" />}>
               <AffiliateLink
                 peptideName={peptide.name}
                 placeholder={peptide.affiliatePlaceholder}
@@ -488,7 +489,7 @@ export default async function PeptidePage({ params }: Props) {
 
             {/* Related Peptides */}
             {relatedPeptides.length > 0 && (
-              <Section title="Related Peptides" icon={<ArrowRight size={18} color="#00D4AA" />}>
+              <Section title="Related Peptides" icon={<ArrowRight size={18} color="#3B82A0" />}>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                   {relatedPeptides.map((rel) => (
                     <Link
@@ -499,19 +500,19 @@ export default async function PeptidePage({ params }: Props) {
                         alignItems: "center",
                         justifyContent: "space-between",
                         padding: "0.875rem 1rem",
-                        background: "rgba(255,255,255,0.03)",
-                        border: "1px solid rgba(255,255,255,0.07)",
+                        background: "#FAFAF7",
+                        border: "1px solid #E8E2D8",
                         borderRadius: "8px",
                         textDecoration: "none",
                       }}
                     >
                       <div>
-                        <p style={{ color: "#fff", fontWeight: 600, fontSize: "0.9rem", margin: "0 0 0.2rem 0" }}>
+                        <p style={{ color: "#1A1614", fontWeight: 600, fontSize: "0.9rem", margin: "0 0 0.2rem 0" }}>
                           {rel.name}
                         </p>
-                        <p style={{ color: "#6B7280", fontSize: "0.8rem", margin: 0 }}>{rel.tagline.slice(0, 60)}…</p>
+                        <p style={{ color: "#A89E98", fontSize: "0.8rem", margin: 0 }}>{rel.tagline.slice(0, 60)}…</p>
                       </div>
-                      <ArrowRight size={14} color="#00D4AA" />
+                      <ArrowRight size={14} color="#3B82A0" />
                     </Link>
                   ))}
                 </div>
@@ -529,8 +530,8 @@ export default async function PeptidePage({ params }: Props) {
           >
             <div
               style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                background: "#FFFFFF",
+                border: "1px solid #E8E2D8",
                 borderRadius: "12px",
                 padding: "1.5rem",
               }}
@@ -540,7 +541,7 @@ export default async function PeptidePage({ params }: Props) {
                   fontFamily: "Syne, sans-serif",
                   fontWeight: 700,
                   fontSize: "1rem",
-                  color: "#fff",
+                  color: "#1A1614",
                   margin: "0 0 1rem 0",
                 }}
               >
@@ -554,15 +555,15 @@ export default async function PeptidePage({ params }: Props) {
               style={{
                 marginTop: "1rem",
                 padding: "1.25rem",
-                background: "rgba(0,212,170,0.05)",
-                border: "1px solid rgba(0,212,170,0.15)",
+                background: "rgba(59,130,160,0.05)",
+                border: "1px solid rgba(59,130,160,0.15)",
                 borderRadius: "10px",
               }}
             >
-              <p style={{ color: "#00D4AA", fontWeight: 600, fontSize: "0.875rem", margin: "0 0 0.5rem 0" }}>
+              <p style={{ color: "#3B82A0", fontWeight: 600, fontSize: "0.875rem", margin: "0 0 0.5rem 0" }}>
                 Compare {peptide.name}
               </p>
-              <p style={{ color: "#6B7280", fontSize: "0.8rem", lineHeight: 1.5, margin: "0 0 0.75rem 0" }}>
+              <p style={{ color: "#A89E98", fontSize: "0.8rem", lineHeight: 1.5, margin: "0 0 0.75rem 0" }}>
                 See how it stacks up against other peptides
               </p>
               <Link
@@ -572,8 +573,8 @@ export default async function PeptidePage({ params }: Props) {
                   textAlign: "center",
                   padding: "0.5rem",
                   borderRadius: "6px",
-                  background: "#00D4AA",
-                  color: "#0A0A0F",
+                  background: "#3B82A0",
+                  color: "#FFFFFF",
                   fontWeight: 700,
                   fontSize: "0.813rem",
                   textDecoration: "none",
@@ -621,7 +622,7 @@ function Section({
           gap: "0.5rem",
           marginBottom: "1rem",
           paddingBottom: "0.5rem",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
+          borderBottom: "1px solid #E8E2D8",
         }}
       >
         {icon}
@@ -630,7 +631,7 @@ function Section({
             fontFamily: "Syne, sans-serif",
             fontWeight: 700,
             fontSize: "1.25rem",
-            color: "#fff",
+            color: "#1A1614",
             margin: 0,
           }}
           dangerouslySetInnerHTML={{ __html: title }}
@@ -671,7 +672,7 @@ function QuickStats({ peptide }: { peptide: ReturnType<typeof getPeptideBySlug> 
         <div key={stat.label}>
           <p
             style={{
-              color: "#6B7280",
+              color: "#A89E98",
               fontSize: "0.7rem",
               fontWeight: 600,
               textTransform: "uppercase",
@@ -683,7 +684,7 @@ function QuickStats({ peptide }: { peptide: ReturnType<typeof getPeptideBySlug> 
           </p>
           <p
             style={{
-              color: stat.color || "#F0F0F0",
+              color: stat.color || "#1A1614",
               fontSize: "0.875rem",
               fontWeight: stat.color ? 600 : 400,
               margin: 0,
@@ -695,10 +696,10 @@ function QuickStats({ peptide }: { peptide: ReturnType<typeof getPeptideBySlug> 
         </div>
       ))}
 
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "0.75rem" }}>
+      <div style={{ borderTop: "1px solid #E8E2D8", paddingTop: "0.75rem" }}>
         <p
           style={{
-            color: "#6B7280",
+            color: "#A89E98",
             fontSize: "0.7rem",
             fontWeight: 600,
             textTransform: "uppercase",
@@ -708,7 +709,7 @@ function QuickStats({ peptide }: { peptide: ReturnType<typeof getPeptideBySlug> 
         >
           Legal Status
         </p>
-        <p style={{ color: "#9CA3AF", fontSize: "0.8rem", lineHeight: 1.6, margin: 0 }}>
+        <p style={{ color: "#6B6460", fontSize: "0.8rem", lineHeight: 1.6, margin: 0 }}>
           {peptide.legalStatus}
         </p>
       </div>

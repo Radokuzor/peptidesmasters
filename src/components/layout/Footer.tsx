@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "#08080D",
-        borderTop: "1px solid rgba(255,255,255,0.06)",
+        background: "#F0EBE3",
+        borderTop: "1px solid #E8E2D8",
         paddingTop: "3rem",
         paddingBottom: "2rem",
         marginBottom: "64px",
@@ -44,7 +44,7 @@ export default function Footer() {
                 style={{
                   width: "28px",
                   height: "28px",
-                  background: "linear-gradient(135deg, #00D4AA, #00A888)",
+                  background: "#3B82A0",
                   borderRadius: "6px",
                   display: "flex",
                   alignItems: "center",
@@ -58,14 +58,14 @@ export default function Footer() {
                   fontFamily: "Syne, sans-serif",
                   fontWeight: 700,
                   fontSize: "1rem",
-                  color: "#fff",
+                  color: "#1A1614",
                 }}
               >
                 PeptidesMasters
               </span>
             </Link>
-            <p style={{ color: "#6B7280", fontSize: "0.813rem", lineHeight: 1.6 }}>
-              The most trusted educational resource for peptide research. Evidence-based. Cited. Updated regularly.
+            <p style={{ color: "#6B6460", fontSize: "0.813rem", lineHeight: 1.6 }}>
+              An educational resource for peptide research. Evidence-based. Cited. Updated regularly.
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export default function Footer() {
           <div>
             <h4
               style={{
-                color: "#fff",
+                color: "#1A1614",
                 fontFamily: "Syne, sans-serif",
                 fontWeight: 600,
                 fontSize: "0.875rem",
@@ -96,7 +96,7 @@ export default function Footer() {
           <div>
             <h4
               style={{
-                color: "#fff",
+                color: "#1A1614",
                 fontFamily: "Syne, sans-serif",
                 fontWeight: 600,
                 fontSize: "0.875rem",
@@ -109,14 +109,8 @@ export default function Footer() {
               links={[
                 { href: "/compare", label: "Compare Peptides" },
                 { href: "/quiz", label: "Peptide Finder Quiz" },
-                {
-                  href: "/compare/bpc-157-vs-tb-500",
-                  label: "BPC-157 vs TB-500",
-                },
-                {
-                  href: "/compare/semaglutide-vs-tirzepatide",
-                  label: "Semaglutide vs Tirzepatide",
-                },
+                { href: "/compare/bpc-157-vs-tb-500", label: "BPC-157 vs TB-500" },
+                { href: "/compare/semaglutide-vs-tirzepatide", label: "Semaglutide vs Tirzepatide" },
               ]}
             />
           </div>
@@ -125,7 +119,7 @@ export default function Footer() {
           <div>
             <h4
               style={{
-                color: "#fff",
+                color: "#1A1614",
                 fontFamily: "Syne, sans-serif",
                 fontWeight: 600,
                 fontSize: "0.875rem",
@@ -149,7 +143,7 @@ export default function Footer() {
           <div>
             <h4
               style={{
-                color: "#fff",
+                color: "#1A1614",
                 fontFamily: "Syne, sans-serif",
                 fontWeight: 600,
                 fontSize: "0.875rem",
@@ -161,14 +155,8 @@ export default function Footer() {
             <FooterLinks
               links={[
                 { href: "/legal", label: "Disclaimer & Legal" },
-                {
-                  href: "/articles/are-peptides-legal-us-2026",
-                  label: "Are Peptides Legal?",
-                },
-                {
-                  href: "/articles/ftc-peptide-marketing",
-                  label: "FTC & Affiliates",
-                },
+                { href: "/articles/are-peptides-legal-us-2026", label: "Are Peptides Legal?" },
+                { href: "/articles/ftc-peptide-marketing", label: "FTC & Affiliates" },
               ]}
             />
           </div>
@@ -177,15 +165,15 @@ export default function Footer() {
         {/* Affiliate Disclosure */}
         <div
           style={{
-            background: "rgba(245, 166, 35, 0.07)",
-            border: "1px solid rgba(245, 166, 35, 0.2)",
+            background: "rgba(139,107,74,0.07)",
+            border: "1px solid rgba(139,107,74,0.2)",
             borderRadius: "8px",
             padding: "1rem 1.25rem",
             marginBottom: "1.5rem",
           }}
         >
-          <p style={{ color: "#D4A94A", fontSize: "0.813rem", lineHeight: 1.6, margin: 0 }}>
-            <strong>Affiliate Disclosure:</strong> PeptidesMasters.com participates in affiliate programs.
+          <p style={{ color: "#6B6460", fontSize: "0.813rem", lineHeight: 1.6, margin: 0 }}>
+            <strong style={{ color: "#8B6B4A" }}>Affiliate Disclosure:</strong> PeptidesMasters.com participates in affiliate programs.
             When you click certain links and make a purchase, we may earn a commission at no extra cost to you.
             This never influences our editorial content. All reviews and recommendations are based on research
             quality and user benefit, not commission rates.
@@ -195,15 +183,15 @@ export default function Footer() {
         {/* Medical Disclaimer */}
         <div
           style={{
-            background: "rgba(0, 212, 170, 0.06)",
-            border: "1px solid rgba(0, 212, 170, 0.15)",
+            background: "rgba(59,130,160,0.06)",
+            border: "1px solid rgba(59,130,160,0.18)",
             borderRadius: "8px",
             padding: "1rem 1.25rem",
             marginBottom: "1.5rem",
           }}
         >
-          <p style={{ color: "#6B7280", fontSize: "0.813rem", lineHeight: 1.6, margin: 0 }}>
-            <strong style={{ color: "#00D4AA" }}>Medical Disclaimer:</strong> PeptidesMasters.com is for
+          <p style={{ color: "#6B6460", fontSize: "0.813rem", lineHeight: 1.6, margin: 0 }}>
+            <strong style={{ color: "#3B82A0" }}>Medical Disclaimer:</strong> PeptidesMasters.com is for
             educational purposes only. Nothing on this site constitutes medical advice, diagnosis, or treatment.
             Always consult a licensed healthcare provider before using any compound discussed here.
             Research peptides are not FDA-approved for human use unless stated otherwise.
@@ -213,7 +201,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           style={{
-            borderTop: "1px solid rgba(255,255,255,0.05)",
+            borderTop: "1px solid #E8E2D8",
             paddingTop: "1.25rem",
             display: "flex",
             flexWrap: "wrap",
@@ -222,10 +210,10 @@ export default function Footer() {
             gap: "0.75rem",
           }}
         >
-          <p style={{ color: "#4B5563", fontSize: "0.813rem", margin: 0 }}>
+          <p style={{ color: "#A89E98", fontSize: "0.813rem", margin: 0 }}>
             © 2026 PeptidesMasters.com · All rights reserved
           </p>
-          <p style={{ color: "#4B5563", fontSize: "0.813rem", margin: 0 }}>
+          <p style={{ color: "#A89E98", fontSize: "0.813rem", margin: 0 }}>
             Evidence-Based · Sources Cited · Updated Regularly
           </p>
         </div>
@@ -242,7 +230,7 @@ function FooterLinks({ links }: { links: { href: string; label: string }[] }) {
           <Link
             href={link.href}
             style={{
-              color: "#6B7280",
+              color: "#6B6460",
               fontSize: "0.813rem",
               textDecoration: "none",
               transition: "color 0.2s",

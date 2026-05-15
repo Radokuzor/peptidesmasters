@@ -74,19 +74,19 @@ export default async function FAQItemPage({ params }: Props) {
               alignItems: "center",
               gap: "0.4rem",
               fontSize: "0.813rem",
-              color: "#6B7280",
+              color: "#A89E98",
               flexWrap: "wrap",
             }}
           >
-            <Link href="/" style={{ color: "#6B7280", textDecoration: "none" }}>
+            <Link href="/" style={{ color: "#A89E98", textDecoration: "none" }}>
               Home
             </Link>
             <ChevronRight size={12} />
-            <Link href="/faq" style={{ color: "#6B7280", textDecoration: "none" }}>
+            <Link href="/faq" style={{ color: "#A89E98", textDecoration: "none" }}>
               FAQ
             </Link>
             <ChevronRight size={12} />
-            <span style={{ color: "#F0F0F0" }}>{faq.category}</span>
+            <span style={{ color: "#6B6460" }}>{faq.category}</span>
           </div>
         </nav>
 
@@ -97,9 +97,9 @@ export default async function FAQItemPage({ params }: Props) {
             borderRadius: "999px",
             fontSize: "0.75rem",
             fontWeight: 600,
-            background: "rgba(0,212,170,0.1)",
-            color: "#00D4AA",
-            border: "1px solid rgba(0,212,170,0.25)",
+            background: "rgba(59,130,160,0.08)",
+            color: "#3B82A0",
+            border: "1px solid rgba(59,130,160,0.22)",
             marginBottom: "1rem",
           }}
         >
@@ -111,7 +111,7 @@ export default async function FAQItemPage({ params }: Props) {
             fontFamily: "Syne, sans-serif",
             fontSize: "clamp(1.5rem, 4vw, 2.25rem)",
             fontWeight: 800,
-            color: "#fff",
+            color: "#1A1614",
             lineHeight: 1.2,
             margin: "0 0 1.5rem 0",
           }}
@@ -121,7 +121,7 @@ export default async function FAQItemPage({ params }: Props) {
 
         <p
           style={{
-            color: "#D1D5DB",
+            color: "#3A3330",
             fontSize: "1.05rem",
             lineHeight: 1.8,
             margin: "0 0 2rem 0",
@@ -137,7 +137,7 @@ export default async function FAQItemPage({ params }: Props) {
               display: "inline-flex",
               alignItems: "center",
               gap: "0.4rem",
-              color: "#00D4AA",
+              color: "#3B82A0",
               fontWeight: 600,
               fontSize: "0.9rem",
               textDecoration: "none",
@@ -150,11 +150,11 @@ export default async function FAQItemPage({ params }: Props) {
 
         <div
           style={{
-            borderTop: "1px solid rgba(255,255,255,0.06)",
+            borderTop: "1px solid #E8E2D8",
             paddingTop: "1.5rem",
           }}
         >
-          <Link href="/faq" style={{ color: "#6B7280", fontSize: "0.875rem", textDecoration: "none" }}>
+          <Link href="/faq" style={{ color: "#A89E98", fontSize: "0.875rem", textDecoration: "none" }}>
             ← All FAQs
           </Link>
         </div>

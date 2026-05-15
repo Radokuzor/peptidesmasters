@@ -34,10 +34,10 @@ export default function Header() {
           position: "sticky",
           top: 0,
           zIndex: 40,
-          background: "rgba(10, 10, 15, 0.95)",
+          background: "rgba(250, 247, 242, 0.97)",
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
-          borderBottom: "1px solid rgba(255,255,255,0.08)",
+          borderBottom: "1px solid #E8E2D8",
         }}
       >
         <div
@@ -67,7 +67,7 @@ export default function Header() {
               style={{
                 width: "32px",
                 height: "32px",
-                background: "linear-gradient(135deg, #00D4AA, #00A888)",
+                background: "#3B82A0",
                 borderRadius: "8px",
                 display: "flex",
                 alignItems: "center",
@@ -81,7 +81,7 @@ export default function Header() {
                 fontFamily: "Syne, sans-serif",
                 fontWeight: 700,
                 fontSize: "1.1rem",
-                color: "#fff",
+                color: "#1A1614",
               }}
             >
               PeptidesMasters
@@ -103,10 +103,10 @@ export default function Header() {
                   fontSize: "0.875rem",
                   fontWeight: 500,
                   textDecoration: "none",
-                  color: pathname === link.href ? "#00D4AA" : "#9CA3AF",
+                  color: pathname === link.href ? "#3B82A0" : "#6B6460",
                   background:
                     pathname === link.href
-                      ? "rgba(0, 212, 170, 0.1)"
+                      ? "rgba(59, 130, 160, 0.08)"
                       : "transparent",
                   transition: "all 0.2s",
                 }}
@@ -128,8 +128,8 @@ export default function Header() {
                   borderRadius: "6px",
                   fontSize: "0.875rem",
                   fontWeight: 500,
-                  background: isToolsActive ? "rgba(0, 212, 170, 0.1)" : "transparent",
-                  color: isToolsActive ? "#00D4AA" : "#9CA3AF",
+                  background: isToolsActive ? "rgba(59, 130, 160, 0.08)" : "transparent",
+                  color: isToolsActive ? "#3B82A0" : "#6B6460",
                   border: "none",
                   cursor: "pointer",
                   transition: "all 0.2s",
@@ -143,13 +143,13 @@ export default function Header() {
                     position: "absolute",
                     top: "calc(100% + 4px)",
                     left: 0,
-                    background: "rgba(18,18,26,0.98)",
-                    border: "1px solid rgba(255,255,255,0.1)",
+                    background: "#FFFFFF",
+                    border: "1px solid #E8E2D8",
                     borderRadius: "8px",
                     padding: "0.4rem",
                     minWidth: "160px",
                     zIndex: 50,
-                    backdropFilter: "blur(12px)",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
                   }}
                 >
                   {toolsLinks.map((link) => (
@@ -161,13 +161,13 @@ export default function Header() {
                         display: "block",
                         padding: "0.5rem 0.75rem",
                         borderRadius: "5px",
-                        color: pathname === link.href ? "#00D4AA" : "#9CA3AF",
+                        color: pathname === link.href ? "#3B82A0" : "#6B6460",
                         textDecoration: "none",
                         fontSize: "0.875rem",
                         fontWeight: 500,
                         background:
                           pathname === link.href
-                            ? "rgba(0,212,170,0.08)"
+                            ? "rgba(59,130,160,0.07)"
                             : "transparent",
                       }}
                     >
@@ -186,9 +186,9 @@ export default function Header() {
               style={{
                 padding: "0.5rem",
                 borderRadius: "6px",
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                color: "#9CA3AF",
+                background: "rgba(0,0,0,0.04)",
+                border: "1px solid #E8E2D8",
+                color: "#6B6460",
                 cursor: "pointer",
                 display: "flex",
                 alignItems: "center",
@@ -204,8 +204,8 @@ export default function Header() {
               style={{
                 padding: "0.45rem 1rem",
                 borderRadius: "6px",
-                background: "#00D4AA",
-                color: "#0A0A0F",
+                background: "#3B82A0",
+                color: "#FFFFFF",
                 fontSize: "0.875rem",
                 fontWeight: 700,
                 textDecoration: "none",
@@ -222,9 +222,9 @@ export default function Header() {
               style={{
                 padding: "0.5rem",
                 borderRadius: "6px",
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                color: "#F0F0F0",
+                background: "rgba(0,0,0,0.04)",
+                border: "1px solid #E8E2D8",
+                color: "#1A1614",
                 cursor: "pointer",
                 display: "none",
                 alignItems: "center",
@@ -240,9 +240,9 @@ export default function Header() {
         {searchOpen && (
           <div
             style={{
-              borderTop: "1px solid rgba(255,255,255,0.08)",
+              borderTop: "1px solid #E8E2D8",
               padding: "1rem 1.5rem",
-              background: "rgba(10,10,15,0.98)",
+              background: "#FAF7F2",
             }}
           >
             <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
@@ -256,16 +256,16 @@ export default function Header() {
                   width: "100%",
                   padding: "0.75rem 1rem",
                   borderRadius: "8px",
-                  background: "rgba(255,255,255,0.06)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  color: "#F0F0F0",
+                  background: "#FFFFFF",
+                  border: "1px solid #E8E2D8",
+                  color: "#1A1614",
                   fontSize: "1rem",
                   outline: "none",
                 }}
               />
               {searchQuery.length > 1 && (
                 <div
-                  style={{ marginTop: "0.75rem", fontSize: "0.875rem", color: "#9CA3AF" }}
+                  style={{ marginTop: "0.75rem", fontSize: "0.875rem", color: "#6B6460" }}
                 >
                   Press Enter to search · Try &quot;BPC-157&quot;, &quot;fat loss&quot;,
                   &quot;legal status&quot;
@@ -279,9 +279,9 @@ export default function Header() {
         {mobileOpen && (
           <nav
             style={{
-              borderTop: "1px solid rgba(255,255,255,0.08)",
+              borderTop: "1px solid #E8E2D8",
               padding: "1rem 1.5rem 1.5rem",
-              background: "rgba(10,10,15,0.98)",
+              background: "#FAF7F2",
             }}
           >
             {navLinks.map((link) => (
@@ -292,8 +292,8 @@ export default function Header() {
                 style={{
                   display: "block",
                   padding: "0.75rem 0",
-                  borderBottom: "1px solid rgba(255,255,255,0.05)",
-                  color: pathname === link.href ? "#00D4AA" : "#F0F0F0",
+                  borderBottom: "1px solid #E8E2D8",
+                  color: pathname === link.href ? "#3B82A0" : "#1A1614",
                   textDecoration: "none",
                   fontSize: "1rem",
                   fontWeight: 500,
@@ -310,8 +310,8 @@ export default function Header() {
                 style={{
                   display: "block",
                   padding: "0.75rem 0",
-                  borderBottom: "1px solid rgba(255,255,255,0.05)",
-                  color: pathname === link.href ? "#00D4AA" : "#F0F0F0",
+                  borderBottom: "1px solid #E8E2D8",
+                  color: pathname === link.href ? "#3B82A0" : "#1A1614",
                   textDecoration: "none",
                   fontSize: "1rem",
                   fontWeight: 500,
@@ -328,8 +328,8 @@ export default function Header() {
                 marginTop: "1rem",
                 padding: "0.75rem",
                 borderRadius: "8px",
-                background: "#00D4AA",
-                color: "#0A0A0F",
+                background: "#3B82A0",
+                color: "#FFFFFF",
                 textAlign: "center",
                 fontWeight: 700,
                 textDecoration: "none",

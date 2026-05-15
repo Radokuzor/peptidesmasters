@@ -31,14 +31,14 @@ export default function HomePage() {
             fontFamily: "Syne, sans-serif",
             fontWeight: 800,
             fontSize: "clamp(1.75rem, 5vw, 2.5rem)",
-            color: "#fff",
+            color: "#1A1614",
             lineHeight: 1.2,
             margin: "0 0 0.75rem 0",
           }}
         >
           What does peptide research actually say?
         </h1>
-        <p style={{ color: "#9CA3AF", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
+        <p style={{ color: "#6B6460", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
           Profiles, comparisons, and legal breakdowns for 15 peptides — sourced from PubMed
           and peer-reviewed journals. Not medical advice.
         </p>
@@ -56,13 +56,14 @@ export default function HomePage() {
                 style={{
                   padding: "1.25rem",
                   borderRadius: "10px",
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "#FFFFFF",
+                  border: "1px solid #E8E2D8",
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
                   gap: "0.5rem",
-                  transition: "border-color 0.15s",
+                  boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
+                  transition: "box-shadow 0.15s",
                 }}
               >
                 <span
@@ -71,7 +72,7 @@ export default function HomePage() {
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "0.06em",
-                    color: "#00D4AA",
+                    color: "#3B82A0",
                   }}
                 >
                   {article.category}
@@ -81,7 +82,7 @@ export default function HomePage() {
                     fontFamily: "Syne, sans-serif",
                     fontWeight: 700,
                     fontSize: "0.95rem",
-                    color: "#fff",
+                    color: "#1A1614",
                     lineHeight: 1.45,
                     margin: 0,
                   }}
@@ -90,7 +91,7 @@ export default function HomePage() {
                 </h2>
                 <p
                   style={{
-                    color: "#6B7280",
+                    color: "#A89E98",
                     fontSize: "0.825rem",
                     lineHeight: 1.6,
                     margin: 0,
@@ -103,7 +104,7 @@ export default function HomePage() {
                 >
                   {article.summary}
                 </p>
-                <span style={{ color: "#4B5563", fontSize: "0.75rem" }}>
+                <span style={{ color: "#C0B8B0", fontSize: "0.75rem" }}>
                   {article.readTime} min read
                 </span>
               </div>
@@ -115,13 +116,13 @@ export default function HomePage() {
           style={{
             marginTop: "2.5rem",
             paddingTop: "1.5rem",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
+            borderTop: "1px solid #E8E2D8",
           }}
         >
           <Link
             href="/peptides"
             style={{
-              color: "#00D4AA",
+              color: "#3B82A0",
               fontSize: "0.875rem",
               fontWeight: 600,
               textDecoration: "none",

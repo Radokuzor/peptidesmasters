@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Search, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import faqs, { getAllFAQCategories } from "@/data/faqs";
 import MedicalDisclaimer from "@/components/ui/MedicalDisclaimer";
 import FAQSearchClient from "./FAQSearchClient";
@@ -34,10 +34,10 @@ export default function FAQPage() {
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" style={{ marginBottom: "1.5rem" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#6B7280" }}>
-            <Link href="/" style={{ color: "#6B7280", textDecoration: "none" }}>Home</Link>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#A89E98" }}>
+            <Link href="/" style={{ color: "#A89E98", textDecoration: "none" }}>Home</Link>
             <ChevronRight size={12} />
-            <span style={{ color: "#F0F0F0" }}>FAQ Hub</span>
+            <span style={{ color: "#6B6460" }}>FAQ Hub</span>
           </div>
         </nav>
 
@@ -46,13 +46,13 @@ export default function FAQPage() {
             fontFamily: "Syne, sans-serif",
             fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
             fontWeight: 800,
-            color: "#fff",
+            color: "#1A1614",
             margin: "0 0 0.75rem 0",
           }}
         >
           Peptide FAQ Hub
         </h1>
-        <p style={{ color: "#9CA3AF", fontSize: "1rem", margin: "0 0 2rem 0", lineHeight: 1.7 }}>
+        <p style={{ color: "#6B6460", fontSize: "1rem", margin: "0 0 2rem 0", lineHeight: 1.7 }}>
           {faqs.length} questions answered with cited, plain-English responses. All answers updated for 2026.
         </p>
 
@@ -70,7 +70,7 @@ export default function FAQPage() {
               fontFamily: "Syne, sans-serif",
               fontWeight: 700,
               fontSize: "1.25rem",
-              color: "#fff",
+              color: "#1A1614",
               marginBottom: "1rem",
             }}
           >
@@ -89,14 +89,15 @@ export default function FAQPage() {
                 style={{
                   display: "block",
                   padding: "0.875rem 1rem",
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.07)",
+                  background: "#FFFFFF",
+                  border: "1px solid #E8E2D8",
                   borderRadius: "8px",
                   textDecoration: "none",
+                  boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                 }}
               >
-                <p style={{ color: "#fff", fontWeight: 600, fontSize: "0.875rem", margin: "0 0 0.25rem 0" }}>{link.label}</p>
-                <p style={{ color: "#6B7280", fontSize: "0.8rem", margin: 0 }}>{link.desc}</p>
+                <p style={{ color: "#1A1614", fontWeight: 600, fontSize: "0.875rem", margin: "0 0 0.25rem 0" }}>{link.label}</p>
+                <p style={{ color: "#A89E98", fontSize: "0.8rem", margin: 0 }}>{link.desc}</p>
               </Link>
             ))}
           </div>

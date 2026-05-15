@@ -36,14 +36,15 @@ export default function FAQSearchClient({
           display: "flex",
           alignItems: "center",
           gap: "0.75rem",
-          background: "rgba(255,255,255,0.05)",
-          border: "1px solid rgba(255,255,255,0.1)",
+          background: "#FFFFFF",
+          border: "1px solid #E8E2D8",
           borderRadius: "8px",
           padding: "0.6rem 1rem",
           marginBottom: "1.25rem",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
         }}
       >
-        <Search size={16} color="#6B7280" />
+        <Search size={16} color="#A89E98" />
         <input
           type="text"
           placeholder='Search FAQs... try "legal", "safe", "injectable"'
@@ -54,7 +55,7 @@ export default function FAQSearchClient({
             background: "transparent",
             border: "none",
             outline: "none",
-            color: "#F0F0F0",
+            color: "#1A1614",
             fontSize: "0.9rem",
           }}
         />
@@ -71,9 +72,9 @@ export default function FAQSearchClient({
               borderRadius: "999px",
               fontSize: "0.813rem",
               cursor: "pointer",
-              background: activeCategory === cat ? "rgba(0,212,170,0.15)" : "rgba(255,255,255,0.05)",
-              border: activeCategory === cat ? "1px solid rgba(0,212,170,0.4)" : "1px solid rgba(255,255,255,0.08)",
-              color: activeCategory === cat ? "#00D4AA" : "#9CA3AF",
+              background: activeCategory === cat ? "rgba(59,130,160,0.1)" : "rgba(0,0,0,0.04)",
+              border: activeCategory === cat ? "1px solid rgba(59,130,160,0.35)" : "1px solid #E8E2D8",
+              color: activeCategory === cat ? "#3B82A0" : "#6B6460",
               fontWeight: activeCategory === cat ? 600 : 400,
             }}
           >
@@ -95,12 +96,12 @@ export default function FAQSearchClient({
                   fontFamily: "Syne, sans-serif",
                   fontWeight: 700,
                   fontSize: "0.813rem",
-                  color: "#00D4AA",
+                  color: "#3B82A0",
                   textTransform: "uppercase",
                   letterSpacing: "0.05em",
                   marginBottom: "0.875rem",
                   paddingBottom: "0.5rem",
-                  borderBottom: "1px solid rgba(0,212,170,0.2)",
+                  borderBottom: "1px solid rgba(59,130,160,0.18)",
                 }}
               >
                 {category}
@@ -110,10 +111,11 @@ export default function FAQSearchClient({
                   <div
                     key={faq.question}
                     style={{
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.07)",
+                      background: "#FFFFFF",
+                      border: "1px solid #E8E2D8",
                       borderRadius: "10px",
                       padding: "1.25rem",
+                      boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                     }}
                     itemScope
                     itemType="https://schema.org/Question"
@@ -123,14 +125,14 @@ export default function FAQSearchClient({
                         fontFamily: "Syne, sans-serif",
                         fontWeight: 700,
                         fontSize: "1rem",
-                        color: "#fff",
+                        color: "#1A1614",
                         margin: "0 0 0.5rem 0",
                       }}
                       itemProp="name"
                     >
                       <Link
                         href={`/faq/${faqQuestionToSlug(faq.question)}`}
-                        style={{ color: "#fff", textDecoration: "none" }}
+                        style={{ color: "#1A1614", textDecoration: "none" }}
                       >
                         {faq.question}
                       </Link>
@@ -138,7 +140,7 @@ export default function FAQSearchClient({
                     <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
                       <p
                         style={{
-                          color: "#9CA3AF",
+                          color: "#6B6460",
                           fontSize: "0.9rem",
                           lineHeight: 1.7,
                           margin: "0 0 0.75rem 0",
@@ -155,7 +157,7 @@ export default function FAQSearchClient({
                           display: "inline-flex",
                           alignItems: "center",
                           gap: "0.3rem",
-                          color: "#00D4AA",
+                          color: "#3B82A0",
                           fontSize: "0.813rem",
                           textDecoration: "none",
                           fontWeight: 500,
@@ -172,7 +174,7 @@ export default function FAQSearchClient({
         })}
 
       {filtered.length === 0 && (
-        <div style={{ textAlign: "center", padding: "3rem", color: "#6B7280" }}>
+        <div style={{ textAlign: "center", padding: "3rem", color: "#A89E98" }}>
           <p>No FAQs match your search. Try different keywords.</p>
         </div>
       )}

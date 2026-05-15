@@ -6,8 +6,8 @@ export default function MedicalDisclaimer() {
       role="note"
       aria-label="Medical disclaimer"
       style={{
-        background: "rgba(0, 212, 170, 0.06)",
-        border: "1px solid rgba(0, 212, 170, 0.2)",
+        background: "rgba(59,130,160,0.06)",
+        border: "1px solid rgba(59,130,160,0.2)",
         borderRadius: "8px",
         padding: "1rem 1.25rem",
         display: "flex",
@@ -15,9 +15,9 @@ export default function MedicalDisclaimer() {
         alignItems: "flex-start",
       }}
     >
-      <ShieldCheck size={18} color="#00D4AA" style={{ flexShrink: 0, marginTop: "2px" }} />
-      <p style={{ color: "#9CA3AF", fontSize: "0.813rem", lineHeight: 1.6, margin: 0 }}>
-        <strong style={{ color: "#00D4AA" }}>Educational purposes only.</strong> The information on
+      <ShieldCheck size={18} color="#3B82A0" style={{ flexShrink: 0, marginTop: "2px" }} />
+      <p style={{ color: "#6B6460", fontSize: "0.813rem", lineHeight: 1.6, margin: 0 }}>
+        <strong style={{ color: "#3B82A0" }}>Educational purposes only.</strong> The information on
         this page is for educational and research purposes only. It does not constitute medical
         advice, diagnosis, or treatment. Research peptides are not FDA-approved for human
         therapeutic use unless explicitly stated. Always consult a licensed healthcare provider

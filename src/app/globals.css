@@ -1,23 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-primary: #0A0A0F;
-  --color-bg-secondary: #12121A;
-  --color-bg-card: rgba(255, 255, 255, 0.04);
-  --color-teal: #00D4AA;
-  --color-teal-dark: #00A888;
-  --color-amber: #F5A623;
-  --color-amber-dark: #D4891A;
-  --color-text-primary: #F0F0F0;
-  --color-text-muted: #9CA3AF;
-  --color-border: rgba(255, 255, 255, 0.08);
+  --color-bg-primary: #FAF7F2;
+  --color-bg-secondary: #F0EBE3;
+  --color-bg-card: #FFFFFF;
+  --color-accent: #3B82A0;
+  --color-accent-dark: #2D6A87;
+  --color-warm: #8B6B4A;
+  --color-warm-dark: #6E5239;
+  --color-text-primary: #1A1614;
+  --color-text-muted: #6B6460;
+  --color-text-dim: #A89E98;
+  --color-border: #E8E2D8;
   --font-heading: "Syne", sans-serif;
   --font-body: "DM Sans", sans-serif;
 }
 
 :root {
-  --background: #0A0A0F;
-  --foreground: #F0F0F0;
+  --background: #FAF7F2;
+  --foreground: #1A1614;
 }
 
 * {
@@ -38,7 +39,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Syne", sans-serif;
-  color: #ffffff;
+  color: #1A1614;
 }
 
 /* Noise texture overlay */
@@ -46,28 +47,27 @@ h1, h2, h3, h4, h5, h6 {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
 }
 
-/* Glass morphism card */
+/* Light card — replaces glass morphism */
 .glass-card {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #FFFFFF;
+  border: 1px solid #E8E2D8;
   border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
-/* Teal glow effect */
+/* Soft accent glow */
 .teal-glow {
-  box-shadow: 0 0 30px rgba(0, 212, 170, 0.15);
+  box-shadow: 0 0 30px rgba(59, 130, 160, 0.12);
 }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #00D4AA, #00A888);
+  background: linear-gradient(135deg, #3B82A0, #2D6A87);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -75,21 +75,21 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Affiliate link styling */
 .affiliate-link {
-  color: #F5A623;
+  color: #8B6B4A;
   font-size: 0.75rem;
   text-decoration: none;
-  border: 1px solid rgba(245, 166, 35, 0.4);
+  border: 1px solid rgba(139, 107, 74, 0.35);
   padding: 2px 8px;
   border-radius: 4px;
   transition: all 0.2s;
 }
 .affiliate-link:hover {
-  background: rgba(245, 166, 35, 0.1);
+  background: rgba(139, 107, 74, 0.08);
 }
 
 /* Progress bar for quiz */
 .progress-bar {
-  background: linear-gradient(90deg, #00D4AA, #00A888);
+  background: linear-gradient(90deg, #3B82A0, #2D6A87);
   border-radius: 999px;
   transition: width 0.4s ease;
 }
@@ -101,9 +101,9 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   height: 64px;
-  background: rgba(10, 10, 15, 0.95);
+  background: rgba(250, 247, 242, 0.97);
   backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #E8E2D8;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -115,45 +115,45 @@ h1, h2, h3, h4, h5, h6 {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0F;
+  background: #FAF7F2;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 212, 170, 0.3);
+  background: rgba(59, 130, 160, 0.25);
   border-radius: 3px;
 }
 
-/* Research badge colors */
+/* Research badge colors — light theme */
 .badge-well-studied {
-  background: rgba(0, 212, 170, 0.15);
-  color: #00D4AA;
-  border: 1px solid rgba(0, 212, 170, 0.3);
+  background: rgba(31, 107, 80, 0.08);
+  color: #1F6B50;
+  border: 1px solid rgba(31, 107, 80, 0.2);
 }
 .badge-emerging {
-  background: rgba(245, 166, 35, 0.15);
-  color: #F5A623;
-  border: 1px solid rgba(245, 166, 35, 0.3);
+  background: rgba(122, 82, 32, 0.08);
+  color: #7A5220;
+  border: 1px solid rgba(122, 82, 32, 0.2);
 }
 .badge-experimental {
-  background: rgba(239, 68, 68, 0.15);
-  color: #F87171;
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(139, 58, 58, 0.08);
+  color: #8B3A3A;
+  border: 1px solid rgba(139, 58, 58, 0.2);
 }
 
 /* Sticky table of contents */
 .toc-link {
-  color: #9CA3AF;
+  color: #A89E98;
   transition: color 0.2s;
   font-size: 0.875rem;
   padding: 4px 0;
   display: block;
 }
 .toc-link:hover, .toc-link.active {
-  color: #00D4AA;
+  color: #3B82A0;
 }
 
 /* Citation superscript */
 .citation {
-  color: #00D4AA;
+  color: #3B82A0;
   font-size: 0.75em;
   vertical-align: super;
   cursor: pointer;
