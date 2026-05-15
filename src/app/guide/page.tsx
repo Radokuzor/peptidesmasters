@@ -41,10 +41,10 @@ export default function GuidePage() {
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" style={{ marginBottom: "1.5rem" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#6B7280" }}>
-            <Link href="/" style={{ color: "#6B7280", textDecoration: "none" }}>Home</Link>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#A89E98" }}>
+            <Link href="/" style={{ color: "#A89E98", textDecoration: "none" }}>Home</Link>
             <ChevronRight size={12} />
-            <span style={{ color: "#F0F0F0" }}>Beginner&apos;s Guide</span>
+            <span style={{ color: "#6B6460" }}>Beginner&apos;s Guide</span>
           </div>
         </nav>
 
@@ -58,10 +58,10 @@ export default function GuidePage() {
                 gap: "0.5rem",
                 padding: "0.3rem 0.75rem",
                 borderRadius: "999px",
-                background: "rgba(0,212,170,0.1)",
-                border: "1px solid rgba(0,212,170,0.25)",
+                background: "rgba(59,130,160,0.08)",
+                border: "1px solid rgba(59,130,160,0.22)",
                 fontSize: "0.75rem",
-                color: "#00D4AA",
+                color: "#3B82A0",
                 fontWeight: 600,
                 marginBottom: "1rem",
               }}
@@ -74,7 +74,7 @@ export default function GuidePage() {
                 fontFamily: "Syne, sans-serif",
                 fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
                 fontWeight: 800,
-                color: "#fff",
+                color: "#1A1614",
                 lineHeight: 1.15,
                 margin: "0 0 1.25rem 0",
               }}
@@ -82,7 +82,7 @@ export default function GuidePage() {
               The Complete Beginner&apos;s Guide to Peptides in 2026
             </h1>
 
-            <p style={{ color: "#9CA3AF", fontSize: "1.1rem", lineHeight: 1.7, marginBottom: "2rem" }}>
+            <p style={{ color: "#6B6460", fontSize: "1.1rem", lineHeight: 1.7, marginBottom: "2rem" }}>
               If you&apos;ve heard about peptides and don&apos;t know where to start — this is the guide for you.
               We cover everything from the basics of what a peptide is, to how to evaluate research, to what
               to look for when sourcing. No hype, no fluff. Just the facts.
@@ -123,20 +123,20 @@ export default function GuidePage() {
                 understanding mechanisms and understanding legal status.
               </p>
               <p>
-                <strong style={{ color: "#fff" }}>Anabolic steroids</strong> are synthetic derivatives of
+                <strong style={{ color: "#1A1614" }}>Anabolic steroids</strong> are synthetic derivatives of
                 testosterone. They bind directly to androgen receptors in muscle and other tissues,
                 producing anabolic (muscle-building) and androgenic (masculinizing) effects. They work
                 at the receptor level in the nucleus of cells. Most are controlled substances (Schedule III
                 in the US) with significant hormonal side effects.
               </p>
               <p>
-                <strong style={{ color: "#fff" }}>SARMs (Selective Androgen Receptor Modulators)</strong> also
+                <strong style={{ color: "#1A1614" }}>SARMs (Selective Androgen Receptor Modulators)</strong> also
                 target androgen receptors but are designed to be tissue-selective — ideally producing muscle
                 effects without androgenic side effects. They are not peptides. They are not FDA-approved and
                 have been the subject of significant enforcement action.
               </p>
               <p>
-                <strong style={{ color: "#fff" }}>Peptides</strong> work through an entirely different mechanism.
+                <strong style={{ color: "#1A1614" }}>Peptides</strong> work through an entirely different mechanism.
                 They bind to peptide-specific receptors and trigger downstream signaling cascades.
                 Growth hormone-releasing peptides stimulate the pituitary; tissue-repair peptides like BPC-157
                 upregulate growth factors locally; cognitive peptides like Semax modulate neurotransmitter
@@ -160,31 +160,31 @@ export default function GuidePage() {
               <p>
                 Peptide legality in the US exists on a spectrum. Here&apos;s a simplified framework:
               </p>
-              <ol style={{ paddingLeft: "1.5rem", color: "#D1D5DB", lineHeight: 2 }}>
+              <ol style={{ paddingLeft: "1.5rem", color: "#3A3330", lineHeight: 2 }}>
                 <li>
-                  <strong style={{ color: "#fff" }}>FDA-approved peptides (with prescription):</strong> Semaglutide
+                  <strong style={{ color: "#1A1614" }}>FDA-approved peptides (with prescription):</strong> Semaglutide
                   (Ozempic/Wegovy), tirzepatide (Mounjaro/Zepbound), bremelanotide (Vyleesi), and others.
                   Fully legal with a valid prescription from a licensed provider.
                 </li>
                 <li>
-                  <strong style={{ color: "#fff" }}>Research chemicals:</strong> BPC-157, TB-500, CJC-1295,
+                  <strong style={{ color: "#1A1614" }}>Research chemicals:</strong> BPC-157, TB-500, CJC-1295,
                   ipamorelin, and most of the peptides on this site. Legal to purchase as research chemicals.
                   Not legal to sell for human consumption. Not FDA-approved for therapeutic use.
                 </li>
                 <li>
-                  <strong style={{ color: "#fff" }}>Banned in sports:</strong> Many research peptides are on
+                  <strong style={{ color: "#1A1614" }}>Banned in sports:</strong> Many research peptides are on
                   WADA&apos;s Prohibited List. Athletes subject to testing should check the current list before
                   using any compound.
                 </li>
                 <li>
-                  <strong style={{ color: "#fff" }}>Compounded peptides:</strong> The FDA&apos;s 2023–2024
+                  <strong style={{ color: "#1A1614" }}>Compounded peptides:</strong> The FDA&apos;s 2023–2024
                   enforcement actions added many peptides to lists that restrict compounding pharmacies from
                   producing them. This is an evolving regulatory area.
                 </li>
               </ol>
               <Link
                 href="/articles/are-peptides-legal-us-2026"
-                style={{ color: "#00D4AA", fontSize: "0.9rem", textDecoration: "none", fontWeight: 500 }}
+                style={{ color: "#3B82A0", fontSize: "0.9rem", textDecoration: "none", fontWeight: 500 }}
               >
                 Read the full 2026 legal breakdown →
               </Link>
@@ -197,25 +197,25 @@ export default function GuidePage() {
                 what type of evidence that claim is based on. Evidence quality ranges enormously.
               </p>
               <p>
-                <strong style={{ color: "#fff" }}>In vitro studies</strong> test compounds on cells in a dish.
+                <strong style={{ color: "#1A1614" }}>In vitro studies</strong> test compounds on cells in a dish.
                 They can show whether a compound interacts with a cell receptor or produces a cellular response.
                 They can&apos;t tell us what happens in a living body — absorption, metabolism, distribution,
                 and dozens of variables all change everything.
               </p>
               <p>
-                <strong style={{ color: "#fff" }}>Animal studies (in vivo)</strong> test compounds in living
+                <strong style={{ color: "#1A1614" }}>Animal studies (in vivo)</strong> test compounds in living
                 animals — usually rodents. They&apos;re far more informative than cell studies but still have
                 significant translational limitations. Many compounds that dramatically extend mouse lifespan
                 have failed in humans.
               </p>
               <p>
-                <strong style={{ color: "#fff" }}>Human trials (clinical trials)</strong> are the gold standard.
+                <strong style={{ color: "#1A1614" }}>Human trials (clinical trials)</strong> are the gold standard.
                 A randomized, double-blind, placebo-controlled trial (RCT) is the strongest form of evidence.
                 Most research peptides on this site do not have completed human RCTs. Semaglutide, with
                 thousands of human trial participants, is the exception — not the rule.
               </p>
 
-              <InfoBox title="The Evidence Hierarchy" color="#F5A623">
+              <InfoBox title="The Evidence Hierarchy" color="#8B6B4A">
                 In vitro → Animal studies → Observational human data → Small human trials →
                 Randomized controlled trials (RCTs) → Systematic reviews and meta-analyses.
                 Most research peptides sit at the animal study level.
@@ -244,15 +244,16 @@ export default function GuidePage() {
                       alignItems: "center",
                       justifyContent: "space-between",
                       padding: "0.875rem 1rem",
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.07)",
+                      background: "#FFFFFF",
+                      border: "1px solid #E8E2D8",
                       borderRadius: "8px",
                       textDecoration: "none",
+                      boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                     }}
                   >
                     <div>
-                      <span style={{ color: "#fff", fontWeight: 600, fontSize: "0.9rem" }}>{p.name}</span>
-                      <span style={{ color: "#6B7280", fontSize: "0.8rem", marginLeft: "0.75rem" }}>{p.use}</span>
+                      <span style={{ color: "#1A1614", fontWeight: 600, fontSize: "0.9rem" }}>{p.name}</span>
+                      <span style={{ color: "#A89E98", fontSize: "0.8rem", marginLeft: "0.75rem" }}>{p.use}</span>
                     </div>
                     <span
                       style={{
@@ -262,16 +263,16 @@ export default function GuidePage() {
                         borderRadius: "999px",
                         background:
                           p.level === "Well-Studied"
-                            ? "rgba(0,212,170,0.1)"
+                            ? "rgba(59,130,160,0.08)"
                             : p.level === "Emerging"
-                            ? "rgba(245,166,35,0.1)"
-                            : "rgba(239,68,68,0.1)",
+                            ? "rgba(139,107,74,0.1)"
+                            : "rgba(220,107,107,0.1)",
                         color:
                           p.level === "Well-Studied"
-                            ? "#00D4AA"
+                            ? "#3B82A0"
                             : p.level === "Emerging"
-                            ? "#F5A623"
-                            : "#F87171",
+                            ? "#8B6B4A"
+                            : "#DC6B6B",
                       }}
                     >
                       {p.level}
@@ -279,7 +280,7 @@ export default function GuidePage() {
                   </Link>
                 ))}
               </div>
-              <Link href="/peptides" style={{ color: "#00D4AA", textDecoration: "none", fontSize: "0.9rem", fontWeight: 500 }}>
+              <Link href="/peptides" style={{ color: "#3B82A0", textDecoration: "none", fontSize: "0.9rem", fontWeight: 500 }}>
                 View the full peptide library →
               </Link>
             </Section>
@@ -289,13 +290,13 @@ export default function GuidePage() {
               <p>
                 You don&apos;t need a PhD to evaluate whether a peptide study means something. Here&apos;s a framework:
               </p>
-              <ol style={{ paddingLeft: "1.5rem", color: "#D1D5DB", lineHeight: 2 }}>
-                <li><strong style={{ color: "#fff" }}>Who were the subjects?</strong> Cells in a dish, mice, rats, or humans? The further up this ladder, the more relevant the data.</li>
-                <li><strong style={{ color: "#fff" }}>Was it randomized and blinded?</strong> A randomized, double-blind, placebo-controlled design is the strongest. Open-label or uncontrolled studies are much weaker.</li>
-                <li><strong style={{ color: "#fff" }}>Sample size:</strong> A 10-person study tells you much less than a 10,000-person study. Look for adequate statistical power.</li>
-                <li><strong style={{ color: "#fff" }}>Who funded it?</strong> Industry-funded studies can have conflicts of interest. Check for independent replication.</li>
-                <li><strong style={{ color: "#fff" }}>What were the actual outcomes?</strong> A statistically significant result may still be clinically meaningless if the effect size is tiny.</li>
-                <li><strong style={{ color: "#fff" }}>Has it been replicated?</strong> A single study — no matter how well designed — should be treated with appropriate skepticism until independently replicated.</li>
+              <ol style={{ paddingLeft: "1.5rem", color: "#3A3330", lineHeight: 2 }}>
+                <li><strong style={{ color: "#1A1614" }}>Who were the subjects?</strong> Cells in a dish, mice, rats, or humans? The further up this ladder, the more relevant the data.</li>
+                <li><strong style={{ color: "#1A1614" }}>Was it randomized and blinded?</strong> A randomized, double-blind, placebo-controlled design is the strongest. Open-label or uncontrolled studies are much weaker.</li>
+                <li><strong style={{ color: "#1A1614" }}>Sample size:</strong> A 10-person study tells you much less than a 10,000-person study. Look for adequate statistical power.</li>
+                <li><strong style={{ color: "#1A1614" }}>Who funded it?</strong> Industry-funded studies can have conflicts of interest. Check for independent replication.</li>
+                <li><strong style={{ color: "#1A1614" }}>What were the actual outcomes?</strong> A statistically significant result may still be clinically meaningless if the effect size is tiny.</li>
+                <li><strong style={{ color: "#1A1614" }}>Has it been replicated?</strong> A single study — no matter how well designed — should be treated with appropriate skepticism until independently replicated.</li>
               </ol>
             </Section>
 
@@ -306,23 +307,23 @@ export default function GuidePage() {
                 between a responsible supplier and a fraudulent one can be the difference between getting
                 the compound you ordered at the purity advertised — or getting something entirely different.
               </p>
-              <p><strong style={{ color: "#fff" }}>What to look for:</strong></p>
-              <ul style={{ paddingLeft: "1.5rem", color: "#D1D5DB", lineHeight: 2 }}>
+              <p><strong style={{ color: "#1A1614" }}>What to look for:</strong></p>
+              <ul style={{ paddingLeft: "1.5rem", color: "#3A3330", lineHeight: 2 }}>
                 <li>Third-party Certificate of Analysis (COA) from an independent, verifiable lab</li>
                 <li>HPLC purity &gt;98%</li>
                 <li>Mass spectrometry confirmation of correct molecular identity</li>
                 <li>Endotoxin testing (critical for injectable peptides)</li>
                 <li>Lot-specific COAs that match your batch</li>
               </ul>
-              <p><strong style={{ color: "#fff" }}>Red flags:</strong></p>
-              <ul style={{ paddingLeft: "1.5rem", color: "#D1D5DB", lineHeight: 2 }}>
+              <p><strong style={{ color: "#1A1614" }}>Red flags:</strong></p>
+              <ul style={{ paddingLeft: "1.5rem", color: "#3A3330", lineHeight: 2 }}>
                 <li>No COA available or COA is generic/undated</li>
                 <li>Claims like &quot;guaranteed results&quot; or therapeutic health claims</li>
                 <li>Prices dramatically below market rate</li>
                 <li>No contact information, no physical address</li>
                 <li>Certificates from labs that don&apos;t appear to exist</li>
               </ul>
-              <Link href="/articles/how-to-read-coa" style={{ color: "#00D4AA", textDecoration: "none", fontSize: "0.9rem", fontWeight: 500 }}>
+              <Link href="/articles/how-to-read-coa" style={{ color: "#3B82A0", textDecoration: "none", fontSize: "0.9rem", fontWeight: 500 }}>
                 How to read a peptide COA in detail →
               </Link>
             </Section>
@@ -348,13 +349,14 @@ export default function GuidePage() {
                     key={term}
                     style={{
                       padding: "0.875rem 1rem",
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.06)",
+                      background: "#FFFFFF",
+                      border: "1px solid #E8E2D8",
                       borderRadius: "8px",
+                      boxShadow: "0 1px 3px rgba(0,0,0,0.03)",
                     }}
                   >
-                    <strong style={{ color: "#00D4AA", fontSize: "0.875rem" }}>{term}</strong>
-                    <p style={{ color: "#9CA3AF", fontSize: "0.875rem", margin: "0.25rem 0 0 0", lineHeight: 1.6 }}>{def}</p>
+                    <strong style={{ color: "#3B82A0", fontSize: "0.875rem" }}>{term}</strong>
+                    <p style={{ color: "#6B6460", fontSize: "0.875rem", margin: "0.25rem 0 0 0", lineHeight: 1.6 }}>{def}</p>
                   </div>
                 ))}
               </div>
@@ -365,22 +367,22 @@ export default function GuidePage() {
               style={{
                 marginTop: "3rem",
                 padding: "1.75rem",
-                background: "rgba(0,212,170,0.05)",
-                border: "1px solid rgba(0,212,170,0.15)",
+                background: "rgba(59,130,160,0.05)",
+                border: "1px solid rgba(59,130,160,0.15)",
                 borderRadius: "12px",
               }}
             >
-              <h3 style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, color: "#fff", margin: "0 0 0.5rem 0" }}>
+              <h3 style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, color: "#1A1614", margin: "0 0 0.5rem 0" }}>
                 Ready to Go Deeper?
               </h3>
-              <p style={{ color: "#9CA3AF", fontSize: "0.875rem", margin: "0 0 1rem 0" }}>
+              <p style={{ color: "#6B6460", fontSize: "0.875rem", margin: "0 0 1rem 0" }}>
                 Explore individual peptide profiles, compare compounds side-by-side, or take the Peptide Finder Quiz.
               </p>
               <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                <Link href="/peptides" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.5rem 1rem", borderRadius: "7px", background: "#00D4AA", color: "#0A0A0F", fontWeight: 700, fontSize: "0.875rem", textDecoration: "none" }}>
+                <Link href="/peptides" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.5rem 1rem", borderRadius: "7px", background: "#3B82A0", color: "#FFFFFF", fontWeight: 700, fontSize: "0.875rem", textDecoration: "none" }}>
                   Peptide Library <ArrowRight size={14} />
                 </Link>
-                <Link href="/quiz" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.5rem 1rem", borderRadius: "7px", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)", color: "#F0F0F0", fontWeight: 600, fontSize: "0.875rem", textDecoration: "none" }}>
+                <Link href="/quiz" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.5rem 1rem", borderRadius: "7px", background: "rgba(0,0,0,0.05)", border: "1px solid #E8E2D8", color: "#1A1614", fontWeight: 600, fontSize: "0.875rem", textDecoration: "none" }}>
                   Peptide Finder Quiz <ArrowRight size={14} />
                 </Link>
               </div>
@@ -391,15 +393,16 @@ export default function GuidePage() {
           <aside style={{ position: "sticky", top: "90px" }} className="guide-toc-desktop">
             <div
               style={{
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.07)",
+                background: "#FFFFFF",
+                border: "1px solid #E8E2D8",
                 borderRadius: "10px",
                 padding: "1.25rem",
+                boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
               }}
             >
               <p
                 style={{
-                  color: "#6B7280",
+                  color: "#A89E98",
                   fontSize: "0.75rem",
                   fontWeight: 600,
                   textTransform: "uppercase",
@@ -418,10 +421,10 @@ export default function GuidePage() {
                     style={{
                       display: "block",
                       padding: "0.35rem 0",
-                      color: "#6B7280",
+                      color: "#A89E98",
                       textDecoration: "none",
                       fontSize: "0.813rem",
-                      borderLeft: "2px solid rgba(255,255,255,0.06)",
+                      borderLeft: "2px solid #E8E2D8",
                       paddingLeft: "0.75rem",
                       marginBottom: "0.25rem",
                     }}
@@ -455,22 +458,22 @@ function Section({ id, title, children }: { id: string; title: string; children:
           fontFamily: "Syne, sans-serif",
           fontWeight: 700,
           fontSize: "clamp(1.25rem, 3vw, 1.75rem)",
-          color: "#fff",
+          color: "#1A1614",
           margin: "0 0 1rem 0",
           paddingBottom: "0.5rem",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
+          borderBottom: "1px solid #E8E2D8",
         }}
       >
         {title}
       </h2>
-      <div style={{ color: "#D1D5DB", fontSize: "1rem", lineHeight: 1.8 }}>
+      <div style={{ color: "#3A3330", fontSize: "1rem", lineHeight: 1.8 }}>
         {children}
       </div>
     </section>
   );
 }
 
-function InfoBox({ title, children, color = "#00D4AA" }: { title: string; children: React.ReactNode; color?: string }) {
+function InfoBox({ title, children, color = "#3B82A0" }: { title: string; children: React.ReactNode; color?: string }) {
   return (
     <div
       style={{
@@ -485,7 +488,7 @@ function InfoBox({ title, children, color = "#00D4AA" }: { title: string; childr
       <p style={{ color, fontWeight: 700, fontSize: "0.813rem", textTransform: "uppercase", letterSpacing: "0.05em", margin: "0 0 0.5rem 0" }}>
         {title}
       </p>
-      <p style={{ color: "#9CA3AF", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>{children}</p>
+      <p style={{ color: "#6B6460", fontSize: "0.9rem", lineHeight: 1.7, margin: 0 }}>{children}</p>
     </div>
   );
 }
@@ -512,9 +515,9 @@ function ComparisonTable({
                   fontWeight: 600,
                   textTransform: "uppercase",
                   letterSpacing: "0.05em",
-                  color: i === 0 ? "#6B7280" : "#00D4AA",
-                  borderBottom: "1px solid rgba(255,255,255,0.08)",
-                  background: "rgba(255,255,255,0.03)",
+                  color: i === 0 ? "#A89E98" : "#3B82A0",
+                  borderBottom: "1px solid #E8E2D8",
+                  background: "#F5F2ED",
                 }}
               >
                 {h}
@@ -531,8 +534,8 @@ function ComparisonTable({
                   style={{
                     padding: "0.65rem 0.875rem",
                     fontSize: "0.875rem",
-                    color: ci === 0 ? "#9CA3AF" : "#D1D5DB",
-                    borderBottom: "1px solid rgba(255,255,255,0.04)",
+                    color: ci === 0 ? "#6B6460" : "#3A3330",
+                    borderBottom: "1px solid #E8E2D8",
                     fontWeight: ci === 0 ? 600 : 400,
                   }}
                 >

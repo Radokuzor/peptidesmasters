@@ -69,12 +69,12 @@ export default async function ArticlePage({ params }: Props) {
       <div style={{ maxWidth: "800px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" style={{ marginBottom: "1.5rem" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#6B7280", flexWrap: "wrap" }}>
-            <Link href="/" style={{ color: "#6B7280", textDecoration: "none" }}>Home</Link>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#A89E98", flexWrap: "wrap" }}>
+            <Link href="/" style={{ color: "#A89E98", textDecoration: "none" }}>Home</Link>
             <ChevronRight size={12} />
-            <Link href="/articles" style={{ color: "#6B7280", textDecoration: "none" }}>Articles</Link>
+            <Link href="/articles" style={{ color: "#A89E98", textDecoration: "none" }}>Articles</Link>
             <ChevronRight size={12} />
-            <span style={{ color: "#F0F0F0", overflow: "hidden", textOverflow: "ellipsis", maxWidth: "200px", whiteSpace: "nowrap" }}>
+            <span style={{ color: "#6B6460", overflow: "hidden", textOverflow: "ellipsis", maxWidth: "200px", whiteSpace: "nowrap" }}>
               {article.title}
             </span>
           </div>
@@ -86,19 +86,19 @@ export default async function ArticlePage({ params }: Props) {
             style={{
               padding: "3px 10px",
               borderRadius: "999px",
-              background: "rgba(0,212,170,0.1)",
-              border: "1px solid rgba(0,212,170,0.25)",
-              color: "#00D4AA",
+              background: "rgba(59,130,160,0.08)",
+              border: "1px solid rgba(59,130,160,0.22)",
+              color: "#3B82A0",
               fontSize: "0.75rem",
               fontWeight: 600,
             }}
           >
             {article.category}
           </span>
-          <span style={{ display: "flex", alignItems: "center", gap: "0.3rem", color: "#6B7280", fontSize: "0.75rem" }}>
+          <span style={{ display: "flex", alignItems: "center", gap: "0.3rem", color: "#A89E98", fontSize: "0.75rem" }}>
             <Clock size={11} /> {article.readTime} min read
           </span>
-          <span style={{ color: "#4B5563", fontSize: "0.75rem" }}>{formatDate(article.publishedAt)}</span>
+          <span style={{ color: "#A89E98", fontSize: "0.75rem" }}>{formatDate(article.publishedAt)}</span>
         </div>
 
         <h1
@@ -106,7 +106,7 @@ export default async function ArticlePage({ params }: Props) {
             fontFamily: "Syne, sans-serif",
             fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
             fontWeight: 800,
-            color: "#fff",
+            color: "#1A1614",
             lineHeight: 1.15,
             margin: "0 0 1rem 0",
           }}
@@ -116,12 +116,12 @@ export default async function ArticlePage({ params }: Props) {
 
         <p
           style={{
-            color: "#9CA3AF",
+            color: "#6B6460",
             fontSize: "1.1rem",
             lineHeight: 1.7,
             margin: "0 0 1.5rem 0",
             paddingBottom: "1.5rem",
-            borderBottom: "1px solid rgba(255,255,255,0.06)",
+            borderBottom: "1px solid #E8E2D8",
           }}
         >
           {article.summary}
@@ -139,14 +139,14 @@ export default async function ArticlePage({ params }: Props) {
                     fontFamily: "Syne, sans-serif",
                     fontWeight: 700,
                     fontSize: "1.35rem",
-                    color: "#fff",
+                    color: "#1A1614",
                     margin: "0 0 0.875rem 0",
                   }}
                 >
                   {section.heading}
                 </h2>
               )}
-              <p style={{ color: "#D1D5DB", fontSize: "1rem", lineHeight: 1.85, margin: 0 }}>
+              <p style={{ color: "#3A3330", fontSize: "1rem", lineHeight: 1.85, margin: 0 }}>
                 {section.body}
               </p>
               {section.sources && section.sources.length > 0 && (
@@ -162,12 +162,12 @@ export default async function ArticlePage({ params }: Props) {
                         alignItems: "center",
                         gap: "0.5rem",
                         fontSize: "0.813rem",
-                        color: "#00D4AA",
+                        color: "#3B82A0",
                         textDecoration: "none",
                         padding: "0.4rem 0.75rem",
-                        background: "rgba(0,212,170,0.05)",
+                        background: "rgba(59,130,160,0.05)",
                         borderRadius: "6px",
-                        border: "1px solid rgba(0,212,170,0.15)",
+                        border: "1px solid rgba(59,130,160,0.15)",
                       }}
                     >
                       <ExternalLink size={12} />
@@ -200,9 +200,9 @@ export default async function ArticlePage({ params }: Props) {
               style={{
                 padding: "4px 10px",
                 borderRadius: "999px",
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                color: "#6B7280",
+                background: "rgba(0,0,0,0.04)",
+                border: "1px solid #E8E2D8",
+                color: "#6B6460",
                 fontSize: "0.8rem",
               }}
             >
@@ -219,7 +219,7 @@ export default async function ArticlePage({ params }: Props) {
                 fontFamily: "Syne, sans-serif",
                 fontWeight: 700,
                 fontSize: "1.25rem",
-                color: "#fff",
+                color: "#1A1614",
                 marginBottom: "1rem",
               }}
             >
@@ -236,21 +236,22 @@ export default async function ArticlePage({ params }: Props) {
                     justifyContent: "space-between",
                     gap: "1rem",
                     padding: "1rem 1.25rem",
-                    background: "rgba(255,255,255,0.03)",
-                    border: "1px solid rgba(255,255,255,0.07)",
+                    background: "#FFFFFF",
+                    border: "1px solid #E8E2D8",
                     borderRadius: "8px",
                     textDecoration: "none",
+                    boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                   }}
                 >
                   <div>
-                    <p style={{ color: "#fff", fontWeight: 600, fontSize: "0.9rem", margin: "0 0 0.25rem 0" }}>
+                    <p style={{ color: "#1A1614", fontWeight: 600, fontSize: "0.9rem", margin: "0 0 0.25rem 0" }}>
                       {rel.title}
                     </p>
-                    <p style={{ color: "#6B7280", fontSize: "0.8rem", margin: 0 }}>
+                    <p style={{ color: "#A89E98", fontSize: "0.8rem", margin: 0 }}>
                       {rel.readTime} min · {rel.category}
                     </p>
                   </div>
-                  <ArrowRight size={14} color="#00D4AA" />
+                  <ArrowRight size={14} color="#3B82A0" />
                 </Link>
               ))}
             </div>

@@ -125,11 +125,11 @@ export default async function ComparisonPage({ params }: Props) {
 
   const researchColor = (level: string) => {
     const map: Record<string, string> = {
-      "Well-Studied": "#00D4AA",
-      Emerging: "#F5A623",
-      Experimental: "#F87171",
+      "Well-Studied": "#3B82A0",
+      Emerging: "#8B6B4A",
+      Experimental: "#DC6B6B",
     };
-    return map[level] || "#9CA3AF";
+    return map[level] || "#A89E98";
   };
 
   return (
@@ -141,12 +141,12 @@ export default async function ComparisonPage({ params }: Props) {
       <div style={{ maxWidth: "1024px", margin: "0 auto", padding: "2rem 1.5rem" }}>
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" style={{ marginBottom: "1.5rem" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#6B7280", flexWrap: "wrap" }}>
-            <Link href="/" style={{ color: "#6B7280", textDecoration: "none" }}>Home</Link>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#A89E98", flexWrap: "wrap" }}>
+            <Link href="/" style={{ color: "#A89E98", textDecoration: "none" }}>Home</Link>
             <ChevronRight size={12} />
-            <Link href="/compare" style={{ color: "#6B7280", textDecoration: "none" }}>Compare</Link>
+            <Link href="/compare" style={{ color: "#A89E98", textDecoration: "none" }}>Compare</Link>
             <ChevronRight size={12} />
-            <span style={{ color: "#F0F0F0" }}>{peptideA.name} vs {peptideB.name}</span>
+            <span style={{ color: "#6B6460" }}>{peptideA.name} vs {peptideB.name}</span>
           </div>
         </nav>
 
@@ -155,14 +155,14 @@ export default async function ComparisonPage({ params }: Props) {
             fontFamily: "Syne, sans-serif",
             fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
             fontWeight: 800,
-            color: "#fff",
+            color: "#1A1614",
             margin: "0 0 1rem 0",
           }}
         >
           {peptideA.name} vs {peptideB.name}: Detailed Comparison
         </h1>
 
-        <p style={{ color: "#9CA3AF", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: "2rem" }}>
+        <p style={{ color: "#6B6460", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: "2rem" }}>
           {comp.intro}
         </p>
 
@@ -178,8 +178,8 @@ export default async function ComparisonPage({ params }: Props) {
           }}
         >
           {[
-            { peptide: peptideA, accent: "#00D4AA" },
-            { peptide: peptideB, accent: "#F5A623" },
+            { peptide: peptideA, accent: "#3B82A0" },
+            { peptide: peptideB, accent: "#8B6B4A" },
           ].map(({ peptide, accent }) => (
             <div
               key={peptide.slug}
@@ -201,7 +201,7 @@ export default async function ComparisonPage({ params }: Props) {
               >
                 {peptide.name}
               </h2>
-              <p style={{ color: "#9CA3AF", fontSize: "0.875rem", lineHeight: 1.6, margin: "0 0 1rem 0" }}>
+              <p style={{ color: "#6B6460", fontSize: "0.875rem", lineHeight: 1.6, margin: "0 0 1rem 0" }}>
                 {peptide.tagline}
               </p>
               <Link
@@ -227,30 +227,30 @@ export default async function ComparisonPage({ params }: Props) {
           <table style={{ width: "100%", borderCollapse: "collapse" }}>
             <thead>
               <tr>
-                <th style={{ padding: "0.875rem 1rem", textAlign: "left", color: "#6B7280", fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", borderBottom: "1px solid rgba(255,255,255,0.08)", width: "25%" }}>
+                <th style={{ padding: "0.875rem 1rem", textAlign: "left", color: "#A89E98", fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", borderBottom: "1px solid #E8E2D8", width: "25%", background: "#F5F2ED" }}>
                   Criteria
                 </th>
-                <th style={{ padding: "0.875rem 1rem", textAlign: "left", borderBottom: "1px solid rgba(255,255,255,0.08)", color: "#00D4AA", fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: "1rem" }}>
+                <th style={{ padding: "0.875rem 1rem", textAlign: "left", borderBottom: "1px solid #E8E2D8", color: "#3B82A0", fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: "1rem", background: "#F5F2ED" }}>
                   {peptideA.name}
                 </th>
-                <th style={{ padding: "0.875rem 1rem", textAlign: "left", borderBottom: "1px solid rgba(255,255,255,0.08)", color: "#F5A623", fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: "1rem" }}>
+                <th style={{ padding: "0.875rem 1rem", textAlign: "left", borderBottom: "1px solid #E8E2D8", color: "#8B6B4A", fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: "1rem", background: "#F5F2ED" }}>
                   {peptideB.name}
                 </th>
               </tr>
             </thead>
             <tbody>
               {rows.map((row, i) => (
-                <tr key={row.label} style={{ background: i % 2 === 0 ? "rgba(255,255,255,0.015)" : "transparent" }}>
-                  <td style={{ padding: "0.875rem 1rem", color: "#9CA3AF", fontSize: "0.813rem", fontWeight: 600, borderBottom: "1px solid rgba(255,255,255,0.04)", verticalAlign: "top" }}>
+                <tr key={row.label} style={{ background: i % 2 === 0 ? "rgba(0,0,0,0.02)" : "#FFFFFF" }}>
+                  <td style={{ padding: "0.875rem 1rem", color: "#6B6460", fontSize: "0.813rem", fontWeight: 600, borderBottom: "1px solid #E8E2D8", verticalAlign: "top" }}>
                     {row.label}
                   </td>
                   <td style={{
                     padding: "0.875rem 1rem",
                     fontSize: "0.875rem",
                     lineHeight: 1.6,
-                    borderBottom: "1px solid rgba(255,255,255,0.04)",
+                    borderBottom: "1px solid #E8E2D8",
                     verticalAlign: "top",
-                    color: row.label === "Research Status" ? researchColor(row.a) : "#D1D5DB",
+                    color: row.label === "Research Status" ? researchColor(row.a) : "#3A3330",
                     fontWeight: row.label === "Research Status" ? 600 : 400,
                   }}>
                     {row.a}
@@ -259,9 +259,9 @@ export default async function ComparisonPage({ params }: Props) {
                     padding: "0.875rem 1rem",
                     fontSize: "0.875rem",
                     lineHeight: 1.6,
-                    borderBottom: "1px solid rgba(255,255,255,0.04)",
+                    borderBottom: "1px solid #E8E2D8",
                     verticalAlign: "top",
-                    color: row.label === "Research Status" ? researchColor(row.b) : "#D1D5DB",
+                    color: row.label === "Research Status" ? researchColor(row.b) : "#3A3330",
                     fontWeight: row.label === "Research Status" ? 600 : 400,
                   }}>
                     {row.b}
@@ -273,37 +273,37 @@ export default async function ComparisonPage({ params }: Props) {
         </div>
 
         {/* Benefits/Risks side by side */}
-        <h2 style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: "1.5rem", color: "#fff", marginBottom: "1rem" }}>
+        <h2 style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: "1.5rem", color: "#1A1614", marginBottom: "1rem" }}>
           Benefits &amp; Risks: Head to Head
         </h2>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
           {[
-            { peptide: peptideA, accent: "#00D4AA" },
-            { peptide: peptideB, accent: "#F5A623" },
+            { peptide: peptideA, accent: "#3B82A0" },
+            { peptide: peptideB, accent: "#8B6B4A" },
           ].map(({ peptide, accent }) => (
             <div key={peptide.slug}>
               <h3 style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, color: accent, marginBottom: "0.75rem" }}>
                 {peptide.name}
               </h3>
               <div style={{ marginBottom: "0.75rem" }}>
-                <p style={{ color: "#00D4AA", fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "0.4rem" }}>
+                <p style={{ color: "#3B82A0", fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "0.4rem" }}>
                   Benefits
                 </p>
                 {peptide.reportedBenefits.map((b, i) => (
                   <div key={i} style={{ display: "flex", gap: "0.4rem", marginBottom: "0.3rem" }}>
-                    <CheckCircle2 size={13} color="#00D4AA" style={{ flexShrink: 0, marginTop: "2px" }} />
-                    <span style={{ color: "#9CA3AF", fontSize: "0.813rem" }}>{b}</span>
+                    <CheckCircle2 size={13} color="#3B82A0" style={{ flexShrink: 0, marginTop: "2px" }} />
+                    <span style={{ color: "#6B6460", fontSize: "0.813rem" }}>{b}</span>
                   </div>
                 ))}
               </div>
               <div>
-                <p style={{ color: "#F87171", fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "0.4rem" }}>
+                <p style={{ color: "#DC6B6B", fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "0.4rem" }}>
                   Risks
                 </p>
                 {peptide.reportedRisks.map((r, i) => (
                   <div key={i} style={{ display: "flex", gap: "0.4rem", marginBottom: "0.3rem" }}>
-                    <XCircle size={13} color="#F87171" style={{ flexShrink: 0, marginTop: "2px" }} />
-                    <span style={{ color: "#9CA3AF", fontSize: "0.813rem" }}>{r}</span>
+                    <XCircle size={13} color="#DC6B6B" style={{ flexShrink: 0, marginTop: "2px" }} />
+                    <span style={{ color: "#6B6460", fontSize: "0.813rem" }}>{r}</span>
                   </div>
                 ))}
               </div>
@@ -328,22 +328,23 @@ export default async function ComparisonPage({ params }: Props) {
                 alignItems: "center",
                 justifyContent: "space-between",
                 padding: "1rem 1.25rem",
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.07)",
+                background: "#FFFFFF",
+                border: "1px solid #E8E2D8",
                 borderRadius: "8px",
                 textDecoration: "none",
+                boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
               }}
             >
-              <span style={{ color: "#fff", fontWeight: 600, fontSize: "0.9rem" }}>
+              <span style={{ color: "#1A1614", fontWeight: 600, fontSize: "0.9rem" }}>
                 Full {p.name} Profile
               </span>
-              <ArrowRight size={14} color="#00D4AA" />
+              <ArrowRight size={14} color="#3B82A0" />
             </Link>
           ))}
         </div>
 
         <div style={{ marginTop: "2rem" }}>
-          <Link href="/compare" style={{ color: "#00D4AA", textDecoration: "none", fontSize: "0.875rem" }}>
+          <Link href="/compare" style={{ color: "#3B82A0", textDecoration: "none", fontSize: "0.875rem" }}>
             ← Back to Compare Tool
           </Link>
         </div>

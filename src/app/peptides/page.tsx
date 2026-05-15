@@ -62,10 +62,10 @@ function PeptideLibraryContent() {
       {/* Header */}
       <div style={{ marginBottom: "2rem" }}>
         <nav aria-label="Breadcrumb" style={{ marginBottom: "0.75rem" }}>
-          <span style={{ color: "#6B7280", fontSize: "0.813rem" }}>
-            <Link href="/" style={{ color: "#6B7280", textDecoration: "none" }}>Home</Link>
+          <span style={{ color: "#A89E98", fontSize: "0.813rem" }}>
+            <Link href="/" style={{ color: "#A89E98", textDecoration: "none" }}>Home</Link>
             {" › "}
-            <span style={{ color: "#F0F0F0" }}>Peptide Library</span>
+            <span style={{ color: "#6B6460" }}>Peptide Library</span>
           </span>
         </nav>
         <h1
@@ -73,13 +73,13 @@ function PeptideLibraryContent() {
             fontFamily: "Syne, sans-serif",
             fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
             fontWeight: 800,
-            color: "#fff",
+            color: "#1A1614",
             margin: "0 0 0.5rem 0",
           }}
         >
           Peptide Library
         </h1>
-        <p style={{ color: "#9CA3AF", fontSize: "1rem", margin: 0 }}>
+        <p style={{ color: "#6B6460", fontSize: "1rem", margin: 0 }}>
           {peptides.length} peptides with cited research, plain-English explanations, and legal breakdowns
         </p>
       </div>
@@ -100,13 +100,14 @@ function PeptideLibraryContent() {
             display: "flex",
             alignItems: "center",
             gap: "0.75rem",
-            background: "rgba(255,255,255,0.05)",
-            border: "1px solid rgba(255,255,255,0.1)",
+            background: "#FFFFFF",
+            border: "1px solid #E8E2D8",
             borderRadius: "8px",
             padding: "0.5rem 1rem",
+            boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
           }}
         >
-          <Search size={16} color="#6B7280" />
+          <Search size={16} color="#A89E98" />
           <input
             type="text"
             placeholder="Search peptides..."
@@ -117,7 +118,7 @@ function PeptideLibraryContent() {
               background: "transparent",
               border: "none",
               outline: "none",
-              color: "#F0F0F0",
+              color: "#1A1614",
               fontSize: "0.9rem",
             }}
           />
@@ -131,9 +132,9 @@ function PeptideLibraryContent() {
             gap: "0.5rem",
             padding: "0.5rem 1rem",
             borderRadius: "8px",
-            background: showFilters ? "rgba(0,212,170,0.1)" : "rgba(255,255,255,0.05)",
-            border: showFilters ? "1px solid rgba(0,212,170,0.3)" : "1px solid rgba(255,255,255,0.1)",
-            color: showFilters ? "#00D4AA" : "#9CA3AF",
+            background: showFilters ? "rgba(59,130,160,0.08)" : "rgba(0,0,0,0.04)",
+            border: showFilters ? "1px solid rgba(59,130,160,0.3)" : "1px solid #E8E2D8",
+            color: showFilters ? "#3B82A0" : "#6B6460",
             cursor: "pointer",
             fontSize: "0.875rem",
             fontWeight: 500,
@@ -152,9 +153,9 @@ function PeptideLibraryContent() {
               gap: "0.4rem",
               padding: "0.5rem 0.875rem",
               borderRadius: "8px",
-              background: "rgba(239,68,68,0.1)",
-              border: "1px solid rgba(239,68,68,0.2)",
-              color: "#F87171",
+              background: "rgba(220,107,107,0.08)",
+              border: "1px solid rgba(220,107,107,0.2)",
+              color: "#DC6B6B",
               cursor: "pointer",
               fontSize: "0.875rem",
             }}
@@ -168,14 +169,15 @@ function PeptideLibraryContent() {
       {showFilters && (
         <div
           style={{
-            background: "rgba(255,255,255,0.03)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            background: "#FFFFFF",
+            border: "1px solid #E8E2D8",
             borderRadius: "10px",
             padding: "1.25rem",
             marginBottom: "1.5rem",
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
             gap: "1.25rem",
+            boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
           }}
         >
           <FilterGroup
@@ -215,7 +217,7 @@ function PeptideLibraryContent() {
       )}
 
       {/* Results count */}
-      <p style={{ color: "#6B7280", fontSize: "0.875rem", marginBottom: "1.25rem" }}>
+      <p style={{ color: "#A89E98", fontSize: "0.875rem", marginBottom: "1.25rem" }}>
         Showing {filtered.length} of {peptides.length} peptides
       </p>
 
@@ -237,14 +239,14 @@ function PeptideLibraryContent() {
           style={{
             textAlign: "center",
             padding: "4rem 1.5rem",
-            color: "#6B7280",
+            color: "#A89E98",
           }}
         >
           <p style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>No peptides match your filters</p>
           <button
             onClick={clearFilters}
             style={{
-              color: "#00D4AA",
+              color: "#3B82A0",
               background: "none",
               border: "none",
               cursor: "pointer",
@@ -280,7 +282,7 @@ function FilterGroup({
     <div>
       <p
         style={{
-          color: "#9CA3AF",
+          color: "#6B6460",
           fontSize: "0.75rem",
           fontWeight: 600,
           textTransform: "uppercase",
@@ -300,9 +302,9 @@ function FilterGroup({
               borderRadius: "6px",
               fontSize: "0.8rem",
               cursor: "pointer",
-              background: selected === opt ? "rgba(0,212,170,0.15)" : "rgba(255,255,255,0.05)",
-              border: selected === opt ? "1px solid rgba(0,212,170,0.4)" : "1px solid rgba(255,255,255,0.08)",
-              color: selected === opt ? "#00D4AA" : "#9CA3AF",
+              background: selected === opt ? "rgba(59,130,160,0.1)" : "rgba(0,0,0,0.04)",
+              border: selected === opt ? "1px solid rgba(59,130,160,0.35)" : "1px solid #E8E2D8",
+              color: selected === opt ? "#3B82A0" : "#6B6460",
               fontWeight: selected === opt ? 600 : 400,
             }}
           >
@@ -323,9 +325,9 @@ function Chip({ label, onRemove }: { label: string; onRemove: () => void }) {
         gap: "0.4rem",
         padding: "0.25rem 0.65rem",
         borderRadius: "999px",
-        background: "rgba(0,212,170,0.1)",
-        border: "1px solid rgba(0,212,170,0.25)",
-        color: "#00D4AA",
+        background: "rgba(59,130,160,0.08)",
+        border: "1px solid rgba(59,130,160,0.22)",
+        color: "#3B82A0",
         fontSize: "0.8rem",
         fontWeight: 500,
       }}
@@ -333,7 +335,7 @@ function Chip({ label, onRemove }: { label: string; onRemove: () => void }) {
       {label}
       <button
         onClick={onRemove}
-        style={{ background: "none", border: "none", color: "#00D4AA", cursor: "pointer", padding: 0, lineHeight: 1 }}
+        style={{ background: "none", border: "none", color: "#3B82A0", cursor: "pointer", padding: 0, lineHeight: 1 }}
       >
         <X size={12} />
       </button>
@@ -343,7 +345,7 @@ function Chip({ label, onRemove }: { label: string; onRemove: () => void }) {
 
 export default function PeptideLibraryPage() {
   return (
-    <Suspense fallback={<div style={{ padding: "4rem", textAlign: "center", color: "#6B7280" }}>Loading...</div>}>
+    <Suspense fallback={<div style={{ padding: "4rem", textAlign: "center", color: "#A89E98" }}>Loading...</div>}>
       <PeptideLibraryContent />
     </Suspense>
   );

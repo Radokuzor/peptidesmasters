@@ -14,10 +14,10 @@ export default function LegalPage() {
     <div style={{ maxWidth: "860px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" style={{ marginBottom: "1.5rem" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#6B7280" }}>
-          <Link href="/" style={{ color: "#6B7280", textDecoration: "none" }}>Home</Link>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#A89E98" }}>
+          <Link href="/" style={{ color: "#A89E98", textDecoration: "none" }}>Home</Link>
           <ChevronRight size={12} />
-          <span style={{ color: "#F0F0F0" }}>Legal & Disclaimer</span>
+          <span style={{ color: "#6B6460" }}>Legal & Disclaimer</span>
         </div>
       </nav>
 
@@ -26,21 +26,21 @@ export default function LegalPage() {
           fontFamily: "Syne, sans-serif",
           fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
           fontWeight: 800,
-          color: "#fff",
+          color: "#1A1614",
           margin: "0 0 1rem 0",
         }}
       >
         Legal & Disclaimer
       </h1>
-      <p style={{ color: "#6B7280", fontSize: "0.813rem", marginBottom: "2.5rem" }}>
+      <p style={{ color: "#A89E98", fontSize: "0.813rem", marginBottom: "2.5rem" }}>
         Last updated: May 1, 2026
       </p>
 
       {/* Medical Disclaimer */}
       <LegalSection
-        icon={<ShieldCheck size={22} color="#00D4AA" />}
+        icon={<ShieldCheck size={22} color="#3B82A0" />}
         title="Medical Disclaimer"
-        accent="#00D4AA"
+        accent="#3B82A0"
       >
         <p>
           <strong>PeptidesMasters.com is for educational and informational purposes only.</strong> Nothing on
@@ -62,36 +62,36 @@ export default function LegalPage() {
 
       {/* FDA Classification */}
       <LegalSection
-        icon={<Scale size={22} color="#F5A623" />}
+        icon={<Scale size={22} color="#8B6B4A" />}
         title="FDA Peptide Classification"
-        accent="#F5A623"
+        accent="#8B6B4A"
       >
         <p>
           The U.S. Food and Drug Administration (FDA) regulates peptides under various frameworks depending
           on their intended use, formulation, and approval status.
         </p>
         <p>
-          <strong style={{ color: "#fff" }}>FDA-Approved Peptides:</strong> Some peptides have completed
+          <strong style={{ color: "#1A1614" }}>FDA-Approved Peptides:</strong> Some peptides have completed
           the full FDA approval process and may be legally prescribed by a licensed healthcare provider.
           Examples include semaglutide (Ozempic®, Wegovy®), tirzepatide (Mounjaro®, Zepbound®), and
           bremelanotide (Vyleesi®). These compounds have undergone extensive clinical testing for safety
           and efficacy.
         </p>
         <p>
-          <strong style={{ color: "#fff" }}>Research Chemicals:</strong> Most peptides discussed on this
+          <strong style={{ color: "#1A1614" }}>Research Chemicals:</strong> Most peptides discussed on this
           website (BPC-157, TB-500, CJC-1295, ipamorelin, and others) are classified as research chemicals.
           They have not been approved by the FDA for human therapeutic use. They may be legally purchased
           for bona fide scientific research purposes but cannot legally be sold for human consumption or
           with therapeutic claims.
         </p>
         <p>
-          <strong style={{ color: "#fff" }}>Compounded Peptides:</strong> In 2023–2024, the FDA added many
+          <strong style={{ color: "#1A1614" }}>Compounded Peptides:</strong> In 2023–2024, the FDA added many
           peptides to lists restricting pharmacy compounding. The regulatory environment for compounded
           peptides continues to evolve. Consult a licensed pharmacist or healthcare provider for current
           information.
         </p>
         <p>
-          <strong style={{ color: "#fff" }}>&quot;Research Use Only&quot;:</strong> This designation means a compound
+          <strong style={{ color: "#1A1614" }}>&quot;Research Use Only&quot;:</strong> This designation means a compound
           has not been approved for clinical use. It does not mean a compound is safe, effective, or
           appropriate for personal use. Compounds sold as &quot;research chemicals&quot; are intended for laboratory
           investigation only.
@@ -100,9 +100,9 @@ export default function LegalPage() {
 
       {/* FTC Affiliate Disclosure */}
       <LegalSection
-        icon={<ExternalLink size={22} color="#A78BFA" />}
+        icon={<ExternalLink size={22} color="#7B6BA0" />}
         title="FTC Affiliate Disclosure"
-        accent="#A78BFA"
+        accent="#7B6BA0"
       >
         <p>
           PeptidesMasters.com participates in affiliate marketing programs. When you click certain links on
@@ -114,7 +114,7 @@ export default function LegalPage() {
           and testimonials in advertising.
         </p>
         <p>
-          <strong style={{ color: "#fff" }}>What this means for you:</strong> All affiliate links on this
+          <strong style={{ color: "#1A1614" }}>What this means for you:</strong> All affiliate links on this
           site are clearly labeled with &quot;(affiliate link)&quot; or a visual indicator. Our editorial content
           is never influenced by affiliate relationships. Compounds are discussed based on the quality and
           quantity of research evidence, not commission rates.
@@ -128,31 +128,31 @@ export default function LegalPage() {
 
       {/* Legal Status of Peptides */}
       <LegalSection
-        icon={<AlertTriangle size={22} color="#F87171" />}
+        icon={<AlertTriangle size={22} color="#DC6B6B" />}
         title="Legal Status & Sports Regulations"
-        accent="#F87171"
+        accent="#DC6B6B"
       >
         <p>
-          <strong style={{ color: "#fff" }}>US Legal Status:</strong> Most research peptides are legal
+          <strong style={{ color: "#1A1614" }}>US Legal Status:</strong> Most research peptides are legal
           to purchase as research chemicals in the United States. They are not legal to sell for human
           consumption or with therapeutic claims. Purchasing for personal human use occupies a legal
           gray area.
         </p>
         <p>
-          <strong style={{ color: "#fff" }}>WADA / Sports Regulations:</strong> Many research peptides
+          <strong style={{ color: "#1A1614" }}>WADA / Sports Regulations:</strong> Many research peptides
           are prohibited in competitive sports by the World Anti-Doping Agency (WADA) and national
           anti-doping organizations. Athletes subject to drug testing must consult the current WADA
           Prohibited List before using any compound. This includes growth hormone-releasing peptides (GHRPs),
           growth hormone-releasing hormones (GHRHs), thymosin beta-4 (TB-500), and others.
         </p>
         <p>
-          <strong style={{ color: "#fff" }}>International Variations:</strong> Legal status varies
+          <strong style={{ color: "#1A1614" }}>International Variations:</strong> Legal status varies
           significantly by country. What is a research chemical in the US may be a controlled substance
           or unapproved drug in another jurisdiction. Always consult local laws before purchasing or
           possessing any compound.
         </p>
         <p>
-          <strong style={{ color: "#fff" }}>Not Legal Advice:</strong> This website does not provide
+          <strong style={{ color: "#1A1614" }}>Not Legal Advice:</strong> This website does not provide
           legal advice. The legal information presented here is educational and general in nature.
           For specific legal guidance, consult a qualified attorney familiar with pharmaceutical and
           regulatory law in your jurisdiction.
@@ -161,9 +161,9 @@ export default function LegalPage() {
 
       {/* Website Terms */}
       <LegalSection
-        icon={<ShieldCheck size={22} color="#00D4AA" />}
+        icon={<ShieldCheck size={22} color="#3B82A0" />}
         title="Website Terms of Use"
-        accent="#00D4AA"
+        accent="#3B82A0"
       >
         <p>
           By using PeptidesMasters.com, you agree that you are accessing this website for educational
@@ -190,16 +190,17 @@ export default function LegalPage() {
         style={{
           marginTop: "3rem",
           padding: "1.5rem",
-          background: "rgba(255,255,255,0.03)",
-          border: "1px solid rgba(255,255,255,0.07)",
+          background: "#FFFFFF",
+          border: "1px solid #E8E2D8",
           borderRadius: "10px",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
         }}
       >
-        <p style={{ color: "#9CA3AF", fontSize: "0.875rem", margin: 0 }}>
+        <p style={{ color: "#6B6460", fontSize: "0.875rem", margin: 0 }}>
           Questions about our legal policies or affiliate relationships? Contact us at{" "}
           <a
             href="mailto:legal@peptidesmasters.com"
-            style={{ color: "#00D4AA", textDecoration: "none" }}
+            style={{ color: "#3B82A0", textDecoration: "none" }}
           >
             legal@peptidesmasters.com
           </a>
@@ -210,7 +211,7 @@ export default function LegalPage() {
       <div style={{ marginTop: "2rem" }}>
         <Link
           href="/"
-          style={{ color: "#00D4AA", textDecoration: "none", fontSize: "0.875rem" }}
+          style={{ color: "#3B82A0", textDecoration: "none", fontSize: "0.875rem" }}
         >
           ← Back to PeptidesMasters.com
         </Link>
@@ -235,7 +236,7 @@ function LegalSection({
       style={{
         marginBottom: "2.5rem",
         paddingBottom: "2.5rem",
-        borderBottom: "1px solid rgba(255,255,255,0.06)",
+        borderBottom: "1px solid #E8E2D8",
       }}
     >
       <div
@@ -252,7 +253,7 @@ function LegalSection({
             fontFamily: "Syne, sans-serif",
             fontWeight: 700,
             fontSize: "1.35rem",
-            color: "#fff",
+            color: "#1A1614",
             margin: 0,
           }}
         >
@@ -265,7 +266,7 @@ function LegalSection({
           borderLeft: `3px solid ${accent}30`,
           fontSize: "0.95rem",
           lineHeight: 1.85,
-          color: "#9CA3AF",
+          color: "#6B6460",
         }}
       >
         {children}

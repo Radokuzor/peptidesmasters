@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 };
 
 const categoryColors: Record<string, string> = {
-  "Research Deep Dives": "#00D4AA",
-  "Legal & Regulatory": "#F5A623",
-  Comparisons: "#A78BFA",
-  "Goal Guides": "#60A5FA",
-  Education: "#F472B6",
+  "Research Deep Dives": "#3B82A0",
+  "Legal & Regulatory": "#8B6B4A",
+  Comparisons: "#7B6BA0",
+  "Goal Guides": "#4A7A9B",
+  Education: "#9B6B8A",
 };
 
 export default function ArticlesPage() {
@@ -26,10 +26,10 @@ export default function ArticlesPage() {
     <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" style={{ marginBottom: "1.5rem" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#6B7280" }}>
-          <Link href="/" style={{ color: "#6B7280", textDecoration: "none" }}>Home</Link>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#A89E98" }}>
+          <Link href="/" style={{ color: "#A89E98", textDecoration: "none" }}>Home</Link>
           <ChevronRight size={12} />
-          <span style={{ color: "#F0F0F0" }}>Articles</span>
+          <span style={{ color: "#6B6460" }}>Articles</span>
         </div>
       </nav>
 
@@ -38,20 +38,20 @@ export default function ArticlesPage() {
           fontFamily: "Syne, sans-serif",
           fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
           fontWeight: 800,
-          color: "#fff",
+          color: "#1A1614",
           margin: "0 0 0.75rem 0",
         }}
       >
         Peptide Research Articles
       </h1>
-      <p style={{ color: "#9CA3AF", fontSize: "1rem", margin: "0 0 2.5rem 0" }}>
+      <p style={{ color: "#6B6460", fontSize: "1rem", margin: "0 0 2.5rem 0" }}>
         {articles.length} evidence-based articles with cited sources. Updated regularly.
       </p>
 
       {/* By category */}
       {categories.map((category) => {
         const categoryArticles = articles.filter((a) => a.category === category);
-        const color = categoryColors[category] || "#00D4AA";
+        const color = categoryColors[category] || "#3B82A0";
         return (
           <div key={category} style={{ marginBottom: "3rem" }}>
             <div
@@ -98,13 +98,14 @@ export default function ArticlesPage() {
                   <div
                     style={{
                       padding: "1.25rem 1.5rem",
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.07)",
+                      background: "#FFFFFF",
+                      border: "1px solid #E8E2D8",
                       borderRadius: "10px",
                       display: "flex",
                       alignItems: "flex-start",
                       justifyContent: "space-between",
                       gap: "1rem",
+                      boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                       transition: "border-color 0.2s",
                     }}
                   >
@@ -114,7 +115,7 @@ export default function ArticlesPage() {
                           fontFamily: "Syne, sans-serif",
                           fontWeight: 700,
                           fontSize: "1.05rem",
-                          color: "#fff",
+                          color: "#1A1614",
                           margin: "0 0 0.4rem 0",
                           lineHeight: 1.4,
                         }}
@@ -123,7 +124,7 @@ export default function ArticlesPage() {
                       </h3>
                       <p
                         style={{
-                          color: "#9CA3AF",
+                          color: "#6B6460",
                           fontSize: "0.875rem",
                           lineHeight: 1.6,
                           margin: "0 0 0.75rem 0",
@@ -132,10 +133,10 @@ export default function ArticlesPage() {
                         {article.summary}
                       </p>
                       <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-                        <span style={{ display: "flex", alignItems: "center", gap: "0.3rem", color: "#6B7280", fontSize: "0.75rem" }}>
+                        <span style={{ display: "flex", alignItems: "center", gap: "0.3rem", color: "#A89E98", fontSize: "0.75rem" }}>
                           <Clock size={11} /> {article.readTime} min read
                         </span>
-                        <span style={{ color: "#4B5563", fontSize: "0.75rem" }}>
+                        <span style={{ color: "#A89E98", fontSize: "0.75rem" }}>
                           {formatDate(article.publishedAt)}
                         </span>
                         <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
@@ -146,9 +147,9 @@ export default function ArticlesPage() {
                                 padding: "2px 7px",
                                 borderRadius: "4px",
                                 fontSize: "0.7rem",
-                                background: "rgba(255,255,255,0.05)",
-                                color: "#6B7280",
-                                border: "1px solid rgba(255,255,255,0.06)",
+                                background: "rgba(0,0,0,0.04)",
+                                color: "#6B6460",
+                                border: "1px solid #E8E2D8",
                               }}
                             >
                               {tag}
@@ -157,7 +158,7 @@ export default function ArticlesPage() {
                         </div>
                       </div>
                     </div>
-                    <ArrowRight size={18} color="#4B5563" style={{ flexShrink: 0, marginTop: "4px" }} />
+                    <ArrowRight size={18} color="#A89E98" style={{ flexShrink: 0, marginTop: "4px" }} />
                   </div>
                 </Link>
               ))}

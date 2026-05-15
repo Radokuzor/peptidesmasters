@@ -29,9 +29,9 @@ const compareRows = [
 ];
 
 const researchColors: Record<string, string> = {
-  "Well-Studied": "#00D4AA",
-  Emerging: "#F5A623",
-  Experimental: "#F87171",
+  "Well-Studied": "#1F6B50",
+  Emerging: "#8B6B4A",
+  Experimental: "#DC6B6B",
 };
 
 function CompareContent() {
@@ -71,10 +71,10 @@ function CompareContent() {
       {/* Header */}
       <div style={{ marginBottom: "2rem" }}>
         <nav aria-label="Breadcrumb" style={{ marginBottom: "0.75rem" }}>
-          <span style={{ color: "#6B7280", fontSize: "0.813rem" }}>
-            <Link href="/" style={{ color: "#6B7280", textDecoration: "none" }}>Home</Link>
+          <span style={{ color: "#A89E98", fontSize: "0.813rem" }}>
+            <Link href="/" style={{ color: "#A89E98", textDecoration: "none" }}>Home</Link>
             {" › "}
-            <span style={{ color: "#F0F0F0" }}>Compare Peptides</span>
+            <span style={{ color: "#6B6460" }}>Compare Peptides</span>
           </span>
         </nav>
         <h1
@@ -82,21 +82,21 @@ function CompareContent() {
             fontFamily: "Syne, sans-serif",
             fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
             fontWeight: 800,
-            color: "#fff",
+            color: "#1A1614",
             margin: "0 0 0.5rem 0",
           }}
         >
-          <GitCompare size={32} color="#00D4AA" style={{ display: "inline", verticalAlign: "middle", marginRight: "0.5rem" }} />
+          <GitCompare size={32} color="#3B82A0" style={{ display: "inline", verticalAlign: "middle", marginRight: "0.5rem" }} />
           Peptide Comparison Tool
         </h1>
-        <p style={{ color: "#9CA3AF", margin: 0 }}>
+        <p style={{ color: "#6B6460", margin: 0 }}>
           Select 2–3 peptides to compare side-by-side. Share your comparison with a unique URL.
         </p>
       </div>
 
       {/* Popular comparisons */}
       <div style={{ marginBottom: "2rem" }}>
-        <p style={{ color: "#6B7280", fontSize: "0.813rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "0.5rem" }}>
+        <p style={{ color: "#A89E98", fontSize: "0.813rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "0.5rem" }}>
           Popular Comparisons
         </p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
@@ -116,14 +116,14 @@ function CompareContent() {
                 cursor: "pointer",
                 background:
                   selectedA === comp.a && selectedB === comp.b
-                    ? "rgba(0,212,170,0.15)"
-                    : "rgba(255,255,255,0.06)",
+                    ? "rgba(59,130,160,0.1)"
+                    : "rgba(0,0,0,0.04)",
                 border:
                   selectedA === comp.a && selectedB === comp.b
-                    ? "1px solid rgba(0,212,170,0.4)"
-                    : "1px solid rgba(255,255,255,0.1)",
+                    ? "1px solid rgba(59,130,160,0.35)"
+                    : "1px solid #E8E2D8",
                 color:
-                  selectedA === comp.a && selectedB === comp.b ? "#00D4AA" : "#9CA3AF",
+                  selectedA === comp.a && selectedB === comp.b ? "#3B82A0" : "#6B6460",
               }}
             >
               {comp.label}
@@ -148,7 +148,7 @@ function CompareContent() {
           search={searchA}
           setSearch={setSearchA}
           onSelect={setSelectedA}
-          accent="#00D4AA"
+          accent="#3B82A0"
         />
         <PeptideSelector
           label="Peptide B"
@@ -156,7 +156,7 @@ function CompareContent() {
           search={searchB}
           setSearch={setSearchB}
           onSelect={setSelectedB}
-          accent="#F5A623"
+          accent="#8B6B4A"
         />
         {addThird && (
           <PeptideSelector
@@ -165,7 +165,7 @@ function CompareContent() {
             search={searchC}
             setSearch={setSearchC}
             onSelect={setSelectedC}
-            accent="#A78BFA"
+            accent="#7B6BA0"
           />
         )}
         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -178,9 +178,9 @@ function CompareContent() {
                 gap: "0.4rem",
                 padding: "0.6rem 0.875rem",
                 borderRadius: "8px",
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                color: "#9CA3AF",
+                background: "rgba(0,0,0,0.04)",
+                border: "1px solid #E8E2D8",
+                color: "#6B6460",
                 cursor: "pointer",
                 fontSize: "0.813rem",
                 whiteSpace: "nowrap",
@@ -197,9 +197,9 @@ function CompareContent() {
                 gap: "0.4rem",
                 padding: "0.6rem 0.875rem",
                 borderRadius: "8px",
-                background: "rgba(239,68,68,0.1)",
-                border: "1px solid rgba(239,68,68,0.2)",
-                color: "#F87171",
+                background: "rgba(220,107,107,0.08)",
+                border: "1px solid rgba(220,107,107,0.2)",
+                color: "#DC6B6B",
                 cursor: "pointer",
                 fontSize: "0.813rem",
                 whiteSpace: "nowrap",
@@ -219,20 +219,21 @@ function CompareContent() {
             style={{
               marginBottom: "1.5rem",
               padding: "0.75rem 1rem",
-              background: "rgba(255,255,255,0.03)",
-              border: "1px solid rgba(255,255,255,0.07)",
+              background: "#FFFFFF",
+              border: "1px solid #E8E2D8",
               borderRadius: "8px",
               display: "flex",
               alignItems: "center",
               gap: "0.75rem",
               flexWrap: "wrap",
+              boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
             }}
           >
-            <ExternalLink size={14} color="#6B7280" />
-            <span style={{ color: "#6B7280", fontSize: "0.813rem" }}>Shareable URL:</span>
+            <ExternalLink size={14} color="#A89E98" />
+            <span style={{ color: "#A89E98", fontSize: "0.813rem" }}>Shareable URL:</span>
             <code
               style={{
-                color: "#00D4AA",
+                color: "#3B82A0",
                 fontSize: "0.813rem",
                 flex: 1,
                 overflow: "hidden",
@@ -247,9 +248,9 @@ function CompareContent() {
               style={{
                 padding: "0.3rem 0.75rem",
                 borderRadius: "6px",
-                background: "rgba(0,212,170,0.1)",
-                border: "1px solid rgba(0,212,170,0.25)",
-                color: "#00D4AA",
+                background: "rgba(59,130,160,0.08)",
+                border: "1px solid rgba(59,130,160,0.22)",
+                color: "#3B82A0",
                 fontSize: "0.75rem",
                 cursor: "pointer",
               }}
@@ -272,13 +273,14 @@ function CompareContent() {
                     style={{
                       padding: "0.875rem 1rem",
                       textAlign: "left",
-                      color: "#6B7280",
+                      color: "#A89E98",
                       fontSize: "0.75rem",
                       fontWeight: 600,
                       textTransform: "uppercase",
                       letterSpacing: "0.05em",
-                      borderBottom: "1px solid rgba(255,255,255,0.08)",
+                      borderBottom: "1px solid #E8E2D8",
                       width: "20%",
+                      background: "#F5F2ED",
                     }}
                   >
                     Criteria
@@ -289,7 +291,8 @@ function CompareContent() {
                       style={{
                         padding: "0.875rem 1rem",
                         textAlign: "left",
-                        borderBottom: "1px solid rgba(255,255,255,0.08)",
+                        borderBottom: "1px solid #E8E2D8",
+                        background: "#F5F2ED",
                       }}
                     >
                       <Link
@@ -298,7 +301,7 @@ function CompareContent() {
                           fontFamily: "Syne, sans-serif",
                           fontWeight: 700,
                           fontSize: "1rem",
-                          color: i === 0 ? "#00D4AA" : i === 1 ? "#F5A623" : "#A78BFA",
+                          color: i === 0 ? "#3B82A0" : i === 1 ? "#8B6B4A" : "#7B6BA0",
                           textDecoration: "none",
                           display: "flex",
                           alignItems: "center",
@@ -316,16 +319,16 @@ function CompareContent() {
                   <tr
                     key={row.key}
                     style={{
-                      background: rowIdx % 2 === 0 ? "rgba(255,255,255,0.015)" : "transparent",
+                      background: rowIdx % 2 === 0 ? "rgba(0,0,0,0.02)" : "#FFFFFF",
                     }}
                   >
                     <td
                       style={{
                         padding: "0.875rem 1rem",
-                        color: "#9CA3AF",
+                        color: "#6B6460",
                         fontSize: "0.813rem",
                         fontWeight: 600,
-                        borderBottom: "1px solid rgba(255,255,255,0.04)",
+                        borderBottom: "1px solid #E8E2D8",
                         verticalAlign: "top",
                       }}
                     >
@@ -342,9 +345,9 @@ function CompareContent() {
                             padding: "0.875rem 1rem",
                             fontSize: "0.875rem",
                             lineHeight: 1.6,
-                            borderBottom: "1px solid rgba(255,255,255,0.04)",
+                            borderBottom: "1px solid #E8E2D8",
                             verticalAlign: "top",
-                            color: isResearch ? researchColors[formatted] || "#F0F0F0" : "#D1D5DB",
+                            color: isResearch ? researchColors[formatted] || "#3A3330" : "#3A3330",
                             fontWeight: isResearch ? 600 : 400,
                           }}
                         >
@@ -359,10 +362,10 @@ function CompareContent() {
                   <td
                     style={{
                       padding: "0.875rem 1rem",
-                      color: "#9CA3AF",
+                      color: "#6B6460",
                       fontSize: "0.813rem",
                       fontWeight: 600,
-                      borderBottom: "1px solid rgba(255,255,255,0.04)",
+                      borderBottom: "1px solid #E8E2D8",
                     }}
                   >
                     Research Suppliers
@@ -372,7 +375,7 @@ function CompareContent() {
                       key={p!.slug}
                       style={{
                         padding: "0.875rem 1rem",
-                        borderBottom: "1px solid rgba(255,255,255,0.04)",
+                        borderBottom: "1px solid #E8E2D8",
                       }}
                     >
                       {/* AFFILIATE: swap [AFFILIATE_LINK_PEPTIDE_NAME] with actual affiliate URL */}
@@ -381,10 +384,10 @@ function CompareContent() {
                         className="affiliate-link"
                         data-product={p!.name}
                         style={{
-                          color: "#F5A623",
+                          color: "#8B6B4A",
                           fontSize: "0.813rem",
                           textDecoration: "none",
-                          border: "1px solid rgba(245,166,35,0.3)",
+                          border: "1px solid rgba(139,107,74,0.3)",
                           padding: "3px 8px",
                           borderRadius: "4px",
                         }}
@@ -407,13 +410,13 @@ function CompareContent() {
           style={{
             textAlign: "center",
             padding: "4rem 1.5rem",
-            background: "rgba(255,255,255,0.02)",
+            background: "rgba(0,0,0,0.02)",
             borderRadius: "12px",
-            border: "1px dashed rgba(255,255,255,0.1)",
+            border: "1px dashed #E8E2D8",
           }}
         >
-          <GitCompare size={48} color="#4B5563" style={{ marginBottom: "1rem" }} />
-          <p style={{ color: "#6B7280", fontSize: "1.1rem" }}>
+          <GitCompare size={48} color="#A89E98" style={{ marginBottom: "1rem" }} />
+          <p style={{ color: "#A89E98", fontSize: "1.1rem" }}>
             Select at least 2 peptides above to see the comparison
           </p>
         </div>
@@ -426,7 +429,7 @@ function CompareContent() {
             fontFamily: "Syne, sans-serif",
             fontWeight: 700,
             fontSize: "1.25rem",
-            color: "#fff",
+            color: "#1A1614",
             marginBottom: "1rem",
           }}
         >
@@ -446,16 +449,17 @@ function CompareContent() {
               style={{
                 display: "block",
                 padding: "1rem 1.25rem",
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                background: "#FFFFFF",
+                border: "1px solid #E8E2D8",
                 borderRadius: "8px",
                 textDecoration: "none",
+                boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
               }}
             >
-              <p style={{ color: "#fff", fontWeight: 600, fontSize: "0.9rem", margin: "0 0 0.3rem 0" }}>
+              <p style={{ color: "#1A1614", fontWeight: 600, fontSize: "0.9rem", margin: "0 0 0.3rem 0" }}>
                 {link.label}
               </p>
-              <p style={{ color: "#6B7280", fontSize: "0.8rem", margin: 0 }}>{link.desc}</p>
+              <p style={{ color: "#A89E98", fontSize: "0.8rem", margin: 0 }}>{link.desc}</p>
             </Link>
           ))}
         </div>
@@ -508,15 +512,16 @@ function PeptideSelector({
           width: "100%",
           padding: "0.65rem 1rem",
           borderRadius: "8px",
-          background: selected ? `${accent}10` : "rgba(255,255,255,0.05)",
-          border: `1px solid ${selected ? accent + "40" : "rgba(255,255,255,0.1)"}`,
-          color: selected ? "#fff" : "#6B7280",
+          background: selected ? `${accent}10` : "#FFFFFF",
+          border: `1px solid ${selected ? accent + "40" : "#E8E2D8"}`,
+          color: selected ? "#1A1614" : "#A89E98",
           textAlign: "left",
           cursor: "pointer",
           fontSize: "0.9rem",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
         }}
       >
         <span>{selected ? selected.name : "Select a peptide…"}</span>
@@ -540,12 +545,13 @@ function PeptideSelector({
             left: 0,
             right: 0,
             zIndex: 10,
-            background: "#12121A",
-            border: "1px solid rgba(255,255,255,0.1)",
+            background: "#FFFFFF",
+            border: "1px solid #E8E2D8",
             borderRadius: "8px",
             marginTop: "4px",
             maxHeight: "280px",
             overflow: "auto",
+            boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
           }}
         >
           <div style={{ padding: "0.5rem" }}>
@@ -558,10 +564,10 @@ function PeptideSelector({
               style={{
                 width: "100%",
                 padding: "0.5rem 0.75rem",
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                background: "rgba(0,0,0,0.04)",
+                border: "1px solid #E8E2D8",
                 borderRadius: "6px",
-                color: "#F0F0F0",
+                color: "#1A1614",
                 fontSize: "0.875rem",
                 outline: "none",
               }}
@@ -581,7 +587,7 @@ function PeptideSelector({
                 textAlign: "left",
                 background: "transparent",
                 border: "none",
-                color: value === p.slug ? accent : "#D1D5DB",
+                color: value === p.slug ? accent : "#3A3330",
                 cursor: "pointer",
                 fontSize: "0.875rem",
                 fontWeight: value === p.slug ? 600 : 400,
@@ -589,7 +595,7 @@ function PeptideSelector({
               }}
             >
               {p.name}
-              <span style={{ color: "#6B7280", fontSize: "0.75rem", marginLeft: "0.5rem" }}>
+              <span style={{ color: "#A89E98", fontSize: "0.75rem", marginLeft: "0.5rem" }}>
                 {p.primaryUses[0]}
               </span>
             </button>
@@ -602,7 +608,7 @@ function PeptideSelector({
 
 export default function ComparePage() {
   return (
-    <Suspense fallback={<div style={{ padding: "4rem", textAlign: "center", color: "#6B7280" }}>Loading…</div>}>
+    <Suspense fallback={<div style={{ padding: "4rem", textAlign: "center", color: "#A89E98" }}>Loading…</div>}>
       <CompareContent />
     </Suspense>
   );

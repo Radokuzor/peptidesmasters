@@ -140,7 +140,7 @@ export default function QuizPage() {
             fontFamily: "Syne, sans-serif",
             fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
             fontWeight: 800,
-            color: "#fff",
+            color: "#1A1614",
             margin: "0 0 0.5rem 0",
           }}
         >
@@ -150,8 +150,8 @@ export default function QuizPage() {
         <div
           style={{
             padding: "0.875rem 1rem",
-            background: "rgba(0,212,170,0.08)",
-            border: "1px solid rgba(0,212,170,0.2)",
+            background: "rgba(59,130,160,0.06)",
+            border: "1px solid rgba(59,130,160,0.18)",
             borderRadius: "8px",
             display: "flex",
             gap: "0.75rem",
@@ -159,9 +159,9 @@ export default function QuizPage() {
             marginBottom: "2rem",
           }}
         >
-          <ShieldCheck size={16} color="#00D4AA" style={{ flexShrink: 0, marginTop: "2px" }} />
-          <p style={{ color: "#9CA3AF", fontSize: "0.813rem", lineHeight: 1.6, margin: 0 }}>
-            <strong style={{ color: "#00D4AA" }}>Disclaimer:</strong> These results reflect what
+          <ShieldCheck size={16} color="#3B82A0" style={{ flexShrink: 0, marginTop: "2px" }} />
+          <p style={{ color: "#6B6460", fontSize: "0.813rem", lineHeight: 1.6, margin: 0 }}>
+            <strong style={{ color: "#3B82A0" }}>Disclaimer:</strong> These results reflect what
             research exists for your stated goals — not a medical recommendation. Always consult
             a licensed healthcare provider before using any compound.
           </p>
@@ -169,8 +169,8 @@ export default function QuizPage() {
 
         {recommendations.length > 0 ? (
           <>
-            <p style={{ color: "#9CA3AF", marginBottom: "1.5rem" }}>
-              Based on your answers (Goal: <strong style={{ color: "#00D4AA" }}>{answers.goal || "General"}</strong>),
+            <p style={{ color: "#6B6460", marginBottom: "1.5rem" }}>
+              Based on your answers (Goal: <strong style={{ color: "#3B82A0" }}>{answers.goal || "General"}</strong>),
               here are the most researched peptides matching your profile:
             </p>
             <div
@@ -186,13 +186,13 @@ export default function QuizPage() {
                   <PeptideCard peptide={p} />
                   <p
                     style={{
-                      color: "#6B7280",
+                      color: "#A89E98",
                       fontSize: "0.8rem",
                       marginTop: "0.5rem",
                       padding: "0 0.25rem",
                     }}
                   >
-                    <strong style={{ color: "#9CA3AF" }}>Why this matches:</strong>{" "}
+                    <strong style={{ color: "#6B6460" }}>Why this matches:</strong>{" "}
                     Researched for {p.primaryUses.filter((u) => u === answers.goal || !answers.goal).join(", ") || p.primaryUses[0]}.
                     Research level: {p.researchLevel}.
                   </p>
@@ -201,7 +201,7 @@ export default function QuizPage() {
             </div>
           </>
         ) : (
-          <div style={{ textAlign: "center", padding: "3rem", color: "#6B7280" }}>
+          <div style={{ textAlign: "center", padding: "3rem", color: "#A89E98" }}>
             <p>No peptides matched all your filters. Try adjusting form preferences.</p>
           </div>
         )}
@@ -211,8 +211,8 @@ export default function QuizPage() {
           <div
             style={{
               padding: "1.75rem",
-              background: "rgba(0,212,170,0.06)",
-              border: "1px solid rgba(0,212,170,0.15)",
+              background: "rgba(59,130,160,0.05)",
+              border: "1px solid rgba(59,130,160,0.12)",
               borderRadius: "12px",
               marginBottom: "2rem",
             }}
@@ -222,13 +222,13 @@ export default function QuizPage() {
                 fontFamily: "Syne, sans-serif",
                 fontWeight: 700,
                 fontSize: "1.1rem",
-                color: "#fff",
+                color: "#1A1614",
                 margin: "0 0 0.5rem 0",
               }}
             >
               Get Your Full Research Profile
             </h3>
-            <p style={{ color: "#9CA3AF", fontSize: "0.875rem", marginBottom: "1rem" }}>
+            <p style={{ color: "#6B6460", fontSize: "0.875rem", marginBottom: "1rem" }}>
               Optional: Get a PDF breakdown of your top peptide matches with research summaries delivered to your inbox.
             </p>
             <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
@@ -242,9 +242,9 @@ export default function QuizPage() {
                   minWidth: "200px",
                   padding: "0.6rem 1rem",
                   borderRadius: "7px",
-                  background: "rgba(255,255,255,0.06)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  color: "#F0F0F0",
+                  background: "rgba(0,0,0,0.04)",
+                  border: "1px solid #E8E2D8",
+                  color: "#1A1614",
                   fontSize: "0.9rem",
                   outline: "none",
                 }}
@@ -257,8 +257,8 @@ export default function QuizPage() {
                 style={{
                   padding: "0.6rem 1.25rem",
                   borderRadius: "7px",
-                  background: "#00D4AA",
-                  color: "#0A0A0F",
+                  background: "#3B82A0",
+                  color: "#FFFFFF",
                   fontWeight: 700,
                   fontSize: "0.875rem",
                   border: "none",
@@ -268,7 +268,7 @@ export default function QuizPage() {
                 Send My Profile
               </button>
             </div>
-            <p style={{ color: "#4B5563", fontSize: "0.75rem", marginTop: "0.5rem" }}>
+            <p style={{ color: "#A89E98", fontSize: "0.75rem", marginTop: "0.5rem" }}>
               No spam. Unsubscribe any time.
             </p>
           </div>
@@ -276,9 +276,9 @@ export default function QuizPage() {
           <div
             style={{
               padding: "1.25rem",
-              background: "rgba(0,212,170,0.08)",
+              background: "rgba(59,130,160,0.06)",
               borderRadius: "8px",
-              color: "#00D4AA",
+              color: "#3B82A0",
               marginBottom: "2rem",
               textAlign: "center",
             }}
@@ -296,9 +296,9 @@ export default function QuizPage() {
               gap: "0.4rem",
               padding: "0.6rem 1.25rem",
               borderRadius: "8px",
-              background: "rgba(255,255,255,0.06)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              color: "#9CA3AF",
+              background: "rgba(0,0,0,0.05)",
+              border: "1px solid #E8E2D8",
+              color: "#6B6460",
               cursor: "pointer",
               fontSize: "0.875rem",
             }}
@@ -313,8 +313,8 @@ export default function QuizPage() {
               gap: "0.4rem",
               padding: "0.6rem 1.25rem",
               borderRadius: "8px",
-              background: "#00D4AA",
-              color: "#0A0A0F",
+              background: "#3B82A0",
+              color: "#FFFFFF",
               fontWeight: 700,
               fontSize: "0.875rem",
               textDecoration: "none",
@@ -339,17 +339,17 @@ export default function QuizPage() {
             marginBottom: "0.5rem",
           }}
         >
-          <span style={{ color: "#6B7280", fontSize: "0.813rem" }}>
+          <span style={{ color: "#A89E98", fontSize: "0.813rem" }}>
             Step {currentStep + 1} of {steps.length}
           </span>
-          <span style={{ color: "#9CA3AF", fontSize: "0.813rem" }}>
+          <span style={{ color: "#6B6460", fontSize: "0.813rem" }}>
             {Math.round(progress)}% complete
           </span>
         </div>
         <div
           style={{
             height: "4px",
-            background: "rgba(255,255,255,0.06)",
+            background: "#E8E2D8",
             borderRadius: "999px",
             overflow: "hidden",
           }}
@@ -367,14 +367,14 @@ export default function QuizPage() {
           fontFamily: "Syne, sans-serif",
           fontSize: "clamp(1.25rem, 3vw, 1.75rem)",
           fontWeight: 700,
-          color: "#fff",
+          color: "#1A1614",
           margin: "0 0 0.5rem 0",
         }}
       >
         {step.question}
       </h2>
       {!isRequired && (
-        <p style={{ color: "#6B7280", fontSize: "0.875rem", marginBottom: "1.5rem" }}>
+        <p style={{ color: "#A89E98", fontSize: "0.875rem", marginBottom: "1.5rem" }}>
           Optional — skip if you prefer
         </p>
       )}
@@ -392,12 +392,13 @@ export default function QuizPage() {
               cursor: "pointer",
               background:
                 answers[step.id] === opt.value
-                  ? "rgba(0,212,170,0.1)"
-                  : "rgba(255,255,255,0.04)",
+                  ? "rgba(59,130,160,0.08)"
+                  : "#FFFFFF",
               border:
                 answers[step.id] === opt.value
-                  ? "2px solid rgba(0,212,170,0.5)"
-                  : "1px solid rgba(255,255,255,0.08)",
+                  ? "2px solid rgba(59,130,160,0.4)"
+                  : "1px solid #E8E2D8",
+              boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
               transition: "all 0.2s",
             }}
           >
@@ -405,7 +406,7 @@ export default function QuizPage() {
               style={{
                 fontWeight: 600,
                 fontSize: "0.95rem",
-                color: answers[step.id] === opt.value ? "#00D4AA" : "#fff",
+                color: answers[step.id] === opt.value ? "#3B82A0" : "#1A1614",
                 margin: "0 0 0.25rem 0",
               }}
             >
@@ -413,7 +414,7 @@ export default function QuizPage() {
             </p>
             <p
               style={{
-                color: "#6B7280",
+                color: "#A89E98",
                 fontSize: "0.813rem",
                 margin: 0,
               }}
@@ -435,9 +436,9 @@ export default function QuizPage() {
               gap: "0.4rem",
               padding: "0.7rem 1.25rem",
               borderRadius: "8px",
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              color: "#9CA3AF",
+              background: "rgba(0,0,0,0.04)",
+              border: "1px solid #E8E2D8",
+              color: "#6B6460",
               cursor: "pointer",
               fontSize: "0.9rem",
             }}
@@ -456,11 +457,11 @@ export default function QuizPage() {
             gap: "0.5rem",
             padding: "0.7rem 1.5rem",
             borderRadius: "8px",
-            background: isRequired && !hasAnswer ? "rgba(255,255,255,0.05)" : "#00D4AA",
-            color: isRequired && !hasAnswer ? "#4B5563" : "#0A0A0F",
+            background: isRequired && !hasAnswer ? "rgba(0,0,0,0.04)" : "#3B82A0",
+            color: isRequired && !hasAnswer ? "#A89E98" : "#FFFFFF",
             fontWeight: 700,
             fontSize: "0.95rem",
-            border: "none",
+            border: isRequired && !hasAnswer ? "1px solid #E8E2D8" : "none",
             cursor: isRequired && !hasAnswer ? "not-allowed" : "pointer",
           }}
         >
@@ -473,9 +474,9 @@ export default function QuizPage() {
             style={{
               padding: "0.7rem 1rem",
               borderRadius: "8px",
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              color: "#6B7280",
+              background: "rgba(0,0,0,0.04)",
+              border: "1px solid #E8E2D8",
+              color: "#A89E98",
               cursor: "pointer",
               fontSize: "0.875rem",
             }}
