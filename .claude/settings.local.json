@@ -5,7 +5,10 @@
       "Bash(npm run *)",
       "Bash(node_modules\\\\.bin\\\\next build *)",
       "WebFetch(domain:meto.co)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\radOk\\\\Documents\\\\peptidesmasters\\\\src\\\\app\\\\articles\" -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "Bash(ConvertTo-Json)"
     ]
   }
 }

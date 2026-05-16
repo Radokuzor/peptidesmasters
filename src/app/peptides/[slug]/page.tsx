@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!peptide) return {};
 
   return {
-    title: `${peptide.name}: Research, Mechanism, Legal Status`,
+    title: peptide.metaTitle ?? `${peptide.name}: Research, Mechanism, Legal Status`,
     description: `${peptide.tagline} Research status: ${peptide.researchLevel}. Legal: ${peptide.fdaStatus}. ${peptide.mechanismOfAction.slice(0, 100)}`,
     alternates: { canonical: `https://peptidesmasters.com/peptides/${slug}` },
     openGraph: {

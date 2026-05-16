@@ -14,6 +14,7 @@ function toArticle(row: any): Article {
     content: row.content ?? [],
     relatedSlugs: row.related_slugs ?? [],
     affiliatePeptide: row.affiliate_peptide ?? undefined,
+    liveUpdateLog: row.live_update_log ?? undefined,
   };
 }
 

@@ -11,6 +11,9 @@ import { formatDate } from "@/lib/utils";
 import AffiliateLink from "@/components/ui/AffiliateLink";
 import EmailInlineBar from "@/components/ui/EmailInlineBar";
 import ArticleLayout from "@/components/layout/ArticleLayout";
+import LiveComplianceLog from "@/components/ui/LiveComplianceLog";
+import QuizCtaBanner from "@/components/ui/QuizCtaBanner";
+import RecoveryPeptidesTable from "@/components/ui/RecoveryPeptidesTable";
 
 // Pre-build existing articles; new ones are rendered on first request and cached
 export const dynamicParams = true;
@@ -137,12 +140,17 @@ export default async function ArticlePage({ params }: Props) {
             fontWeight: 800,
             color: "#111827",
             lineHeight: 1.15,
-            margin: "0 0 1rem 0",
+            margin: "0 0 1.25rem 0",
             letterSpacing: "-0.02em",
           }}
         >
           {article.title}
         </h1>
+
+        {slug === "are-peptides-legal-us-2026" && <LiveComplianceLog entries={article.liveUpdateLog} />}
+
+        {(slug === "are-peptides-legal-us-2026" ||
+          slug === "best-peptides-muscle-recovery-2026") && <QuizCtaBanner />}
 
         <p
           style={{
@@ -156,6 +164,8 @@ export default async function ArticlePage({ params }: Props) {
         >
           {article.summary}
         </p>
+
+        {slug === "best-peptides-muscle-recovery-2026" && <RecoveryPeptidesTable />}
 
         {/* Article body */}
         <article style={{ marginTop: "2rem" }}>

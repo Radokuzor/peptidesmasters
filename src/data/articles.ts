@@ -4,6 +4,12 @@ export interface ArticleSection {
   sources?: { label: string; url: string }[];
 }
 
+export interface LogEntry {
+  date: string;
+  status: string;
+  message: string;
+}
+
 export interface Article {
   slug: string;
   title: string;
@@ -15,4 +21,5 @@ export interface Article {
   content: ArticleSection[];
   relatedSlugs: string[];
   affiliatePeptide?: string;
+  liveUpdateLog?: LogEntry[];
 }

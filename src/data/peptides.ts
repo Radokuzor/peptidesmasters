@@ -45,6 +45,7 @@ export interface Peptide {
   studies: Study[];
   affiliatePlaceholder: string;
   lastUpdated: string;
+  metaTitle?: string;
 }
 
 const peptides: Peptide[] = [
@@ -373,6 +374,7 @@ const peptides: Peptide[] = [
     ],
     affiliatePlaceholder: "CJC_1295",
     lastUpdated: "2026-05-01",
+    metaTitle: "CJC-1295 Guide (2026 Update): Dosage, DAC vs No-DAC, & Research",
   },
   {
     slug: "ipamorelin",

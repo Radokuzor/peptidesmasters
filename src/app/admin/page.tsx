@@ -35,7 +35,7 @@ const emptyForm = () => ({
   publishedAt: new Date().toISOString().split("T")[0],
   readTime: 8,
   tags: "",
-  relatedSlugs: "",
+  relatedSlugs: [] as string[],
   affiliatePeptide: "",
   content: [emptySection()],
 });
@@ -77,15 +77,85 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
   );
 }
 
+// ── Related Articles Picker ────────────────────────────────────
+function RelatedArticlesPicker({
+  selected,
+  onChange,
+  articles,
+  currentSlug,
+}: {
+  selected: string[];
+  onChange: (slugs: string[]) => void;
+  articles: Article[];
+  currentSlug: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const options = articles.filter(a => a.slug !== currentSlug);
+
+  function toggle(slug: string) {
+    onChange(selected.includes(slug) ? selected.filter(s => s !== slug) : [...selected, slug]);
+  }
+
+  const selectedTitles = options.filter(a => selected.includes(a.slug)).map(a => a.title);
+
+  return (
+    <div style={{ position: "relative" }}>
+      {open && (
+        <div onClick={() => setOpen(false)}
+          style={{ position: "fixed", inset: 0, zIndex: 99 }} />
+      )}
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        style={{ ...inputStyle, textAlign: "left", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "space-between" }}
+      >
+        <span style={{ color: selectedTitles.length ? "#111827" : "#9CA3AF", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", flex: 1 }}>
+          {selectedTitles.length ? selectedTitles.join(", ") : "Select related articles…"}
+        </span>
+        <span style={{ color: "#9CA3AF", marginLeft: "0.5rem", flexShrink: 0 }}>{open ? "▴" : "▾"}</span>
+      </button>
+      {open && (
+        <div style={{
+          position: "absolute", top: "calc(100% + 4px)", left: 0, right: 0,
+          background: "#FFF", border: "1px solid #E5E7EB", borderRadius: "6px",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.1)", zIndex: 100,
+          maxHeight: "220px", overflowY: "auto",
+        }}>
+          {options.length === 0 && (
+            <p style={{ padding: "0.75rem 1rem", color: "#9CA3AF", fontSize: "0.85rem", margin: 0 }}>
+              No other articles yet
+            </p>
+          )}
+          {options.map(a => (
+            <label key={a.slug} style={{
+              display: "flex", alignItems: "center", gap: "0.625rem",
+              padding: "0.6rem 1rem", cursor: "pointer",
+              borderBottom: "1px solid #F3F4F6", fontSize: "0.85rem", color: "#111827",
+              background: selected.includes(a.slug) ? "#FFF5F5" : "#FFF",
+            }}>
+              <input type="checkbox" checked={selected.includes(a.slug)}
+                onChange={() => toggle(a.slug)} style={{ margin: 0, cursor: "pointer" }} />
+              <span style={{ flex: 1 }}>{a.title}</span>
+              <span style={{ color: "#9CA3AF", fontSize: "0.7rem", fontFamily: "monospace" }}>{a.slug}</span>
+            </label>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ── Article Form ───────────────────────────────────────────────
 function ArticleForm({
   initial,
   onSave,
   onCancel,
+  articles,
 }: {
   initial?: Partial<Article>;
   onSave: () => void;
   onCancel: () => void;
+  articles: Article[];
 }) {
   const [form, setForm] = useState(() => {
     if (!initial) return emptyForm();
@@ -97,7 +167,7 @@ function ArticleForm({
       publishedAt: initial.publishedAt ?? new Date().toISOString().split("T")[0],
       readTime: initial.readTime ?? 8,
       tags: (initial.tags ?? []).join(", "),
-      relatedSlugs: (initial.relatedSlugs ?? []).join(", "),
+      relatedSlugs: initial.relatedSlugs ?? [],
       affiliatePeptide: initial.affiliatePeptide ?? "",
       content: initial.content?.length ? initial.content : [emptySection()],
     };
@@ -173,7 +243,7 @@ function ArticleForm({
       published_at: form.publishedAt,
       read_time: Number(form.readTime),
       tags: form.tags.split(",").map(t => t.trim()).filter(Boolean),
-      related_slugs: form.relatedSlugs.split(",").map(s => s.trim()).filter(Boolean),
+      related_slugs: form.relatedSlugs,
       affiliate_peptide: form.affiliatePeptide || null,
       content: form.content.map(s => ({
         heading: s.heading || undefined,
@@ -261,9 +331,13 @@ function ArticleForm({
 
         <div style={{ display: "flex", gap: "1rem" }}>
           <label style={{ ...labelStyle, flex: 1 }}>
-            Related slugs <span style={{ color: "#9CA3AF", fontWeight: 400 }}>(comma-separated)</span>
-            <input style={inputStyle} value={form.relatedSlugs} onChange={e => setField("relatedSlugs", e.target.value)}
-              placeholder="bpc-157-complete-research-review, how-to-read-coa" />
+            Related articles
+            <RelatedArticlesPicker
+              selected={form.relatedSlugs}
+              onChange={slugs => setField("relatedSlugs", slugs)}
+              articles={articles}
+              currentSlug={form.slug}
+            />
           </label>
           <label style={{ ...labelStyle, width: "200px" }}>
             Affiliate peptide <span style={{ color: "#9CA3AF", fontWeight: 400 }}>(optional)</span>
@@ -376,6 +450,7 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
         initial={view === "edit" && editing ? editing : undefined}
         onSave={() => { setView("list"); fetchArticles(); }}
         onCancel={() => setView("list")}
+        articles={articles}
       />
     );
   }
