@@ -2,12 +2,19 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ChevronRight, Clock, ExternalLink, ArrowRight } from "lucide-react";
-import articles, { getArticleBySlug, getAllArticleSlugs } from "@/data/articles";
+import {
+  getArticleBySlug,
+  getAllArticleSlugs,
+  getArticlesBySlugList,
+} from "@/lib/articles-db";
 import { formatDate } from "@/lib/utils";
-import MedicalDisclaimer from "@/components/ui/MedicalDisclaimer";
 import AffiliateLink from "@/components/ui/AffiliateLink";
 import EmailInlineBar from "@/components/ui/EmailInlineBar";
 import ArticleLayout from "@/components/layout/ArticleLayout";
+
+// Pre-build existing articles; new ones are rendered on first request and cached
+export const dynamicParams = true;
+export const revalidate = 3600; // re-check Supabase every hour
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -23,12 +30,17 @@ function slugifyHeading(text: string): string {
 }
 
 export async function generateStaticParams() {
-  return getAllArticleSlugs().map((slug) => ({ slug }));
+  try {
+    const slugs = await getAllArticleSlugs();
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    return []; // Supabase unavailable at build time — pages generated on first request
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
   if (!article) return {};
 
   return {
@@ -46,12 +58,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
   if (!article) notFound();
 
-  const relatedArticles = article.relatedSlugs
-    .map((s) => articles.find((a) => a.slug === s))
-    .filter(Boolean) as typeof articles;
+  const relatedArticles = await getArticlesBySlugList(article.relatedSlugs);
 
   const tocItems = article.content
     .filter((s) => s.heading)
@@ -146,8 +156,6 @@ export default async function ArticlePage({ params }: Props) {
         >
           {article.summary}
         </p>
-
-        <MedicalDisclaimer />
 
         {/* Article body */}
         <article style={{ marginTop: "2rem" }}>

@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight, Clock, ArrowRight } from "lucide-react";
-import articles, { getArticleCategories } from "@/data/articles";
+import { getAllArticles, getArticleCategories } from "@/lib/articles-db";
 import { formatDate } from "@/lib/utils";
+
+// Refresh article list every 60 seconds — new articles appear within 1 minute
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Peptide Research Articles & Guides",
@@ -19,8 +22,12 @@ const categoryColors: Record<string, string> = {
   Education: "#9B6B8A",
 };
 
-export default function ArticlesPage() {
-  const categories = getArticleCategories();
+export default async function ArticlesPage() {
+  let articles: Awaited<ReturnType<typeof getAllArticles>> = [];
+  let categories: string[] = [];
+  try {
+    [articles, categories] = await Promise.all([getAllArticles(), getArticleCategories()]);
+  } catch { /* Supabase not reachable at build time — data loads at runtime */ }
 
   return (
     <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>

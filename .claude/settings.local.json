@@ -4,7 +4,8 @@
       "Bash(npx skills *)",
       "Bash(npm run *)",
       "Bash(node_modules\\\\.bin\\\\next build *)",
-      "WebFetch(domain:meto.co)"
+      "WebFetch(domain:meto.co)",
+      "Bash(npm install *)"
     ]
   }
 }

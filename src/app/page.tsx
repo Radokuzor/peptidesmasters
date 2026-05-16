@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import articles from "@/data/articles";
+import { getAllArticles } from "@/lib/articles-db";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Which Peptides Does the Research Actually Support?",
@@ -22,7 +24,9 @@ const questionTitles: Record<string, string> = {
   "ftc-peptide-marketing": "What Are the Legal Rules Around Peptide Marketing?",
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  let articles: Awaited<ReturnType<typeof getAllArticles>> = [];
+  try { articles = await getAllArticles(); } catch { /* no Supabase at build time */ }
   return (
     <div className="max-w-2xl mx-auto px-4 py-12">
       <section className="mb-10">

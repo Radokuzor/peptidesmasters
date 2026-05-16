@@ -1,14 +1,17 @@
 import type { MetadataRoute } from "next";
 import { getAllPeptideSlugs } from "@/data/peptides";
-import { getAllArticleSlugs } from "@/data/articles";
-
-export const dynamic = "force-static";
+import { getAllArticleSlugs } from "@/lib/articles-db";
 
 const BASE_URL = "https://peptidesmasters.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const peptideSlugs = getAllPeptideSlugs();
-  const articleSlugs = getAllArticleSlugs();
+  let articleSlugs: string[] = [];
+  try {
+    articleSlugs = await getAllArticleSlugs();
+  } catch {
+    // Supabase not reachable at build time — article pages added at runtime
+  }
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
