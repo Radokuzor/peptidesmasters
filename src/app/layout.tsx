@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BottomTabBar from "@/components/layout/BottomTabBar";
-import DisclaimerBanner from "@/components/layout/DisclaimerBanner";
 import EmailPopup from "@/components/ui/EmailPopup";
 
 const syne = Syne({
@@ -121,7 +120,6 @@ export default function RootLayout({
           flexDirection: "column",
         }}
       >
-        <DisclaimerBanner />
         <Header />
         <main style={{ flex: 1 }}>{children}</main>
         <Footer />
