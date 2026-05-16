@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans } from "next/font/google";
+import { Syne, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -14,11 +14,11 @@ const syne = Syne({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-inter",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -82,7 +82,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${syne.variable} ${inter.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -113,9 +113,9 @@ export default function RootLayout({
       </head>
       <body
         style={{
-          background: "#FAF7F2",
-          color: "#1A1614",
-          fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif",
+          background: "#FFFFFF",
+          color: "#111827",
+          fontFamily: "var(--font-inter), 'Inter', sans-serif",
           minHeight: "100vh",
           display: "flex",
           flexDirection: "column",

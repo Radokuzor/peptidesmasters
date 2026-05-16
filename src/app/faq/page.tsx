@@ -34,10 +34,10 @@ export default function FAQPage() {
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" style={{ marginBottom: "1.5rem" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#A89E98" }}>
-            <Link href="/" style={{ color: "#A89E98", textDecoration: "none" }}>Home</Link>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.813rem", color: "#9CA3AF" }}>
+            <Link href="/" style={{ color: "#9CA3AF", textDecoration: "none" }}>Home</Link>
             <ChevronRight size={12} />
-            <span style={{ color: "#6B6460" }}>FAQ Hub</span>
+            <span style={{ color: "#525456" }}>FAQ Hub</span>
           </div>
         </nav>
 
@@ -46,13 +46,13 @@ export default function FAQPage() {
             fontFamily: "Syne, sans-serif",
             fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
             fontWeight: 800,
-            color: "#1A1614",
+            color: "#111827",
             margin: "0 0 0.75rem 0",
           }}
         >
           Peptide FAQ Hub
         </h1>
-        <p style={{ color: "#6B6460", fontSize: "1rem", margin: "0 0 2rem 0", lineHeight: 1.7 }}>
+        <p style={{ color: "#525456", fontSize: "1rem", margin: "0 0 2rem 0", lineHeight: 1.7 }}>
           {faqs.length} questions answered with cited, plain-English responses. All answers updated for 2026.
         </p>
 
@@ -70,7 +70,7 @@ export default function FAQPage() {
               fontFamily: "Syne, sans-serif",
               fontWeight: 700,
               fontSize: "1.25rem",
-              color: "#1A1614",
+              color: "#111827",
               marginBottom: "1rem",
             }}
           >
@@ -90,14 +90,14 @@ export default function FAQPage() {
                   display: "block",
                   padding: "0.875rem 1rem",
                   background: "#FFFFFF",
-                  border: "1px solid #E8E2D8",
+                  border: "1px solid #E5E7EB",
                   borderRadius: "8px",
                   textDecoration: "none",
                   boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                 }}
               >
-                <p style={{ color: "#1A1614", fontWeight: 600, fontSize: "0.875rem", margin: "0 0 0.25rem 0" }}>{link.label}</p>
-                <p style={{ color: "#A89E98", fontSize: "0.8rem", margin: 0 }}>{link.desc}</p>
+                <p style={{ color: "#111827", fontWeight: 600, fontSize: "0.875rem", margin: "0 0 0.25rem 0" }}>{link.label}</p>
+                <p style={{ color: "#9CA3AF", fontSize: "0.8rem", margin: 0 }}>{link.desc}</p>
               </Link>
             ))}
           </div>
